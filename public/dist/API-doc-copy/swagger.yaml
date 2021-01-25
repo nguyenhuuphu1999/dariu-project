@@ -1,0 +1,41 @@
+swagger: 2.0.0
+info:
+  description: Example of Swagger
+  version: 1.0.0
+  title: Swagger Demo
+schemes:
+  - http
+basePath: ""
+tags:
+- name: API
+  description: Everything about user
+paths:
+  /home:
+    $ref: Path/Home.yaml
+     
+  /apartments/diaDiemNoiBatChiTiet?idDetail=2:
+    $ref: Path/DiaDiemNoiBatChiTiet.yaml
+ 
+  /apartments/typeApartment?idTypeHouse=5:
+    $ref: Path/TypeApartment.yaml
+  
+  /apartments/detail?id=10:
+    $ref: Path/ApartmentDetail.yaml
+  
+  /apartments/checkBooking?id=21:
+    $ref: Path/CheckBooking.yaml
+
+  /infoUser?idUser=1:
+    $ref: Path/InfoUser.yaml
+
+  /booking:
+    $ref: Path/SaveInfoBooking.yaml
+
+  /register/user:
+    $ref: Path/RegisterUser.yaml
+
+  /SendMailForResgister/andRegisterOwn:
+    $ref: Path/SendMailForResgisterandRegisterOwn.yaml
+  
+  /updateProfileOwn/own:
+    $ref: Path/UpdateProfileOwn.yaml
