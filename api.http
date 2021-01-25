@@ -1,0 +1,192 @@
+
+GET  http://localhost:3000/apartment
+
+
+######################3
+GET  http://localhost:3000/housenear
+
+
+######################3
+GET  http://localhost:3000/feedback
+
+######################3
+GET  http://localhost:3000/dia_diem_noi_bat
+
+
+
+######################3
+GET  http://localhost:3000/footer
+
+######################3
+GET  http://localhost:3000/footer_cong_dong
+######################3
+GET  http://localhost:3000/footerdon_tiep_khach
+######################3
+GET  http://localhost:3000/footer_gioi_thieu
+######################3
+GET  http://localhost:3000/footer_ho_tro
+
+
+######################3
+GET  http://localhost:3000/fiter_city?id=4
+
+
+
+######################3 apartment_detail
+GET  http://localhost:3000/apartment/detail?id=10
+
+
+######################3 apartment_detail
+GET  http://localhost:3000/apartment/detail/comment?id=10
+
+
+######################3 Dang_ky ok 
+POST   http://localhost:3000/dang_ky
+Content-Type: application/json
+
+{
+    "username":"phu_nguyen", 
+    "pass":"123",
+     "fullname" : "NGuyen HUu Phu" ,
+     "date_of_birth":"1999-10-10",
+      "address":"Binh Dinh",
+       "avata" :"Chua co",
+       " phone_number":"0369202024"
+}
+
+
+
+
+
+######################3 login
+POST    http://localhost:3000/login
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2MTA5Mzg5NTgsImV4cCI6MTYxMDk0MjU1OH0._zsI47IVlNwxwrtCNxLoZh3Q1pY23zax7sUrqxi8gB0
+
+{
+    "username":"phunguyen", 
+    "pass":"123456"
+     
+}
+
+
+######################3 promotion ok
+GET    http://localhost:3000/promotions
+
+
+
+######################3 hotelnearby ok 
+GET    http://localhost:3000/hotelnearby
+
+######################3 cho_o_gan_ban ok 
+GET  http://localhost:3000/cho_o_gan_ban
+
+
+
+################################################## API ################################################
+
+
+GET  http://localhost:3000/home
+
+################
+
+GET  http://localhost:3000/apartments/diaDiemNoiBatChiTiet?idDetail=2
+
+#######################
+
+GET  http://localhost:3000/apartments/typeApartment?idTypeHouse=5
+
+#######################
+
+GET  http://localhost:3000/apartments/detail?id=10
+
+
+#######################
+
+GET  http://localhost:3000/apartments/checkBooking?id=2
+
+
+#######################
+
+GET  http://localhost:3000/infoUser?idUser=1
+
+########################### 2021-01-21
+
+POST http://localhost:3000/booking
+Content-Type: application/json
+
+{
+    "id_apartment":21,
+    "id_user":1,
+    "check_in":"2021-01-21",
+    "check_out":"2021-01-22",
+    "ho_ten":"Nguyen huu phu",
+    "email":"Email",
+    "so_dien_thoai":"01365355",
+    "phi_dich_vu":15,
+    "total": 71
+}
+
+########################### 2021-01-23 (next)
+
+POST http://localhost:3000/register/user
+Content-Type: application/json
+
+{
+    "username":"huuphu" ,
+    "passwd":"123456" ,
+    "full_user":"Nguyen Huu Phu",
+    "date_of_birth":"2021-10-28",
+    "address":"Hoai Nhon , Binh Dinh",
+    "email":"nhp2132131@gmail.com",
+    "phone_number":"0369202024"
+}
+
+#######################
+
+POST  http://localhost:3000/SendMailForResgister/andRegisterOwn
+Content-Type: application/json
+
+{
+    "emailCheck":1,
+    "username" :"huuphu",
+    "full_user" :"Nguyen Huu Phu",
+    "date_of_birth" :"1999-10-28",
+    "phone_number":"0369202024",
+    "email":"greenabcd5@gmail.com"
+}
+
+#######################
+
+POST   http://localhost:3000/comfimRegister/user (need feedback)
+Content-Type: application/json
+
+{
+    "code":"703443",
+    "checkcode":"703443",
+    "email": "greenabcd5@gmail.com"
+
+}
+
+#######################
+
+PUT    http://localhost:3000/updateProfileOwn/own (need feedback)
+Content-Type: application/json
+
+{
+    "about":"Chủ nhà vui tính hiền lành tốt bụng dễ thương đẹp trai",
+    "email":"nhp2132@gmail.com",
+    "phone_number":"0369202024",
+    "full_user":"Nguyễn Hữu Phú",
+    "language":"Vietnammes",
+    "id":18
+}
+
+
+
+
+#######################
+
+POST     http://localhost:3000/uploadImageOwn/profile
+Content-Type: application/json
+

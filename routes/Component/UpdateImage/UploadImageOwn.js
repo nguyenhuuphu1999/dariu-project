@@ -6,24 +6,24 @@ const path = require("path");
 var fs = require('fs');
 
 const  upload = multer({
-    dest :"../public/images/"
+    dest: path.join(__dirname, "../../../public/images")
 })
 
-router.post('/profile',(req,res,next)=>{
+router.post('/profile', async (req,res,next)=>{
 
     // var temPath = req.file. path;
     // console.log("dong 1" + temPath)
     // var pathSave = path.join(__dirname,'../../../public/images/image.jpg')
-    const fileGettingUploaded = "../../../public/images/image.jpg";
+    const fileGettingUploaded = path.join(__dirname, "../../../public/images/Screenshot.png");
 
-
-    cloudinary.uploader.upload(fileGettingUploaded, function(result, error) {
-        if (result) {
-            res.status(200).json(result);
-        } else {
-            res.status(500).json(error);
-        }
-    });
+    try{
+        const result = await cloudinary.uploader.upload(fileGettingUploaded);
+        res.json(result);
+    } catch (e) {
+        console.error(e);
+        res.sendStatus(500);
+    }
+   
 
     // cloudinary.uploader.upload('image.jpg')
    

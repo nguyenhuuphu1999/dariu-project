@@ -6,6 +6,9 @@ const CheckBookings = require('../../models/ApartmentCheckBookings')
 
 router.get('/checkBooking', async (req,res) => {
 
+
+    
+
     const CheckBooking = await CheckBookings.findAll(
     {
         where:{

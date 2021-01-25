@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv-safe').config();
 var app = require('../app');
 var debug = require('debug')('api-data-home-stay:server');
 var http = require('http');
@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3005');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
