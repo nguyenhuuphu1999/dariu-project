@@ -61,18 +61,18 @@ var app = express();
 
 // view engine setup
 
-// var whitelist = ['http://localhost:3000', 'https://project-dariu.herokuapp.com','http://localhost:8001','https://do-an-nho-nho.herokuapp.com']
-// var corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin || whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
+var whitelist = ['http://localhost:3000', 'https://project-dariu.herokuapp.com','http://localhost:8001','https://do-an-nho-nho.herokuapp.com']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
