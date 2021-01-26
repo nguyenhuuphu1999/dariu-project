@@ -7,7 +7,7 @@ ApartmentCheckBookings.init({
     
     id_apartment:DataTypes.STRING,
     check_in:DataTypes.DATE,
-    check_out: DataTypes.DATE,
+    check_out: DataTypes.DATEONLY,
  
    
 }, { 

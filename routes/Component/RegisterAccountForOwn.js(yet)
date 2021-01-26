@@ -21,8 +21,9 @@ router.post('/', async (req,res) => {
         
     })
    
-  res.json({ 
-    user
+  res.json({
+    message:"Ban da dang ky chu nha thanh cong" ,
+    data:user
   });
 
 }); 

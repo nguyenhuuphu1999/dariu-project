@@ -1,6 +1,6 @@
-get:
+post:
   tags:
-  - Check Booking
+  - Xác nhận và kích hoạt tài khoản cho user
   summary: 
   consumes:
   - "application/json"
@@ -9,7 +9,7 @@ get:
   parameters:
   - in: body
     name: data
-    description: Kiễm tra ngày user booking còn trống hay không
+    description: kiễm tra và update lại ma key register sau khi user nhập ma tu email.Và kích hoạt acc cho user chu nha ( status)
   schema:
     type: object
     properties:
@@ -26,14 +26,9 @@ get:
         type: object
         properties:
           id: 
-            type: int
-            example: 8
-          id_apartment: 
-            type: int
-            example: 21
-          check_in: 
-            type: string
-            example: "2021-01-21"
-          check_out: 
-            type: string
-            example: "2021-01-22"
+            code: string
+            example: '293009'
+          email: 
+            code: string
+            example: 'greenacd5@gmail.com'
+       

@@ -3,10 +3,28 @@ const { Op, where } = require('sequelize');
 const router = express.Router();
 
 const ComfimRegister = require('../../models/Register');
+const { findOne } = require('../../models/RegisterAccountForOwn');
 const RegisterAccountForOwn = require('../../models/RegisterAccountForOwn');
 router.post('/user', async (req,res) => {
 
-  if(req.body.code ==req.body.checkcode){
+    var flagCheckKeyRegister = true;
+    const checkCode = await RegisterAccountForOwn.findOne({
+        where:{
+            key_register:req.body.code,
+            email:req.body.email
+        }
+    })
+    console.log(checkCode)
+    if(checkCode == null){
+        console.log(" ngao he")
+        flagCheckKeyRegister = true
+    }else{
+        flagCheckKeyRegister= false
+    }
+   
+
+
+  if( flagCheckKeyRegister == false){
     const ComfimPageUser = await ComfimRegister.update({
         become_a_part_of_us:1,
         id_type_user:4,
@@ -18,18 +36,27 @@ router.post('/user', async (req,res) => {
     )
 
     const UpdateKeyRegidterInOwn = await RegisterAccountForOwn.update(
-        {key_register:''},
+        {
+            key_register:'',
+            status:1
+
+        },
             {
                 where:{
                     email:req.body.email
                 }
             }
     )
+    res.json({
+        message:"Update Successfull",
+    })
+  }else{
+    res.json({
+        message:"Email khong hop le hoat ma kich hoat da het han",
+    })
   }
 
-res.json({
-    data:"Update Successfull"
-})
+   
 
 }); 
 

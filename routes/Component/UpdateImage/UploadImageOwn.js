@@ -9,15 +9,18 @@ const  upload = multer({
     dest: path.join(__dirname, "../../../public/images")
 })
 
-router.post('/profile', async (req,res,next)=>{
+router.post('/avatar',upload.single("upload_file_input"), (req,res,next)=>{
 
-    // var temPath = req.file. path;
+    console.log(req.file.path)
+    var temPath = req.file.path;
     // console.log("dong 1" + temPath)
     // var pathSave = path.join(__dirname,'../../../public/images/image.jpg')
-    const fileGettingUploaded = path.join(__dirname, "../../../public/images/Screenshot.png");
+    // // const fileGettingUploaded = path.join(__dirname, "../../../public/images/Screenshot.png");
 
     try{
-        const result = await cloudinary.uploader.upload(fileGettingUploaded);
+        // const result = await cloudinary.uploader.upload(fileGettingUploaded);
+        const result =  cloudinary.uploader.upload(temPath);
+        
         res.json(result);
     } catch (e) {
         console.error(e);

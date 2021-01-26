@@ -32,10 +32,11 @@ var DiaDiemNoiBatChiTietRouter = require('./routes/Component/DiaDiemNoiBatChiTie
 var TypeApartmentRouter = require('./routes/Component/TypeApartment');
 var ApartmentDetail = require('./routes/Page/ApartmentDetail')
 var CheckBooking = require('./routes/Component/CheckBooking')
+var ListCheckBooking = require('./routes/Component/ListCheckBooking')
 var InfoUser = require('./routes/Component/InfoUser')
 var Booking = require('./routes/Page/Booking')
 var Register = require('./routes/Component/Register')
-var SendMailForResgister  =require('./routes/Modul/SendMailForResgister');
+var SendMailForandResgisterOwn  =require('./routes/Modul/SendMailForResgisterOwn');
 var comfimRegister  =require('./routes/Component/ComfimResister');
 var UpdateProfileOwn  =require('./routes/Component/UpdateProfileOwn');
 var UploadImageOwn  =require('./routes/Component/UpdateImage/UploadImageOwn');
@@ -111,10 +112,11 @@ app.use('/apartments',DiaDiemNoiBatChiTietRouter);
 app.use('/apartments',TypeApartmentRouter);
 app.use('/apartments',ApartmentDetail);
 app.use('/apartments',CheckBooking);
+app.use('/apartments',ListCheckBooking);
 app.use('/infoUser',InfoUser);
 app.use('/booking',Booking);
 app.use('/register',Register);
-app.use('/sendMailForResgister',SendMailForResgister);
+app.use('/sendMailForResgister',SendMailForandResgisterOwn);
 app.use('/comfimRegister',comfimRegister);
 app.use('/updateProfileOwn',UpdateProfileOwn);
 app.use('/uploadImageOwn',UploadImageOwn);

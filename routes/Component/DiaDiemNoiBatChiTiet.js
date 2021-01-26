@@ -8,11 +8,12 @@ const DiaDiemNoiBat = require('../../models/DiaDiemNoiBat');
 const { query } = require('../../models/sequelize');
 
 
-router.get('/diaDiemNoiBatChiTiet', async (req,res) => {
+router.get('/:idDetail/diaDiemNoiBatChiTiet', async (req,res) => {
 
+    console.log(req.params.idDetail)
     const diaDiemNoiBatChiTiet = await Apartment.findAll({ 
         where:{
-            id_city:req.query.idDetail
+            id_city:req.params.idDetail
         },
         include:[{
             model:ApartmentPhoto,

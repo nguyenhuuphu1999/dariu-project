@@ -9,7 +9,7 @@ post:
   parameters:
   - in: body
     name: data
-    description: FE sẽ kiễm tra user nhập email này đã được đăng ký chưa nếu chưa sẽ trả về 0 và ngươc lại có sẽ trả về 1 (emailCheck). date_of_birth đúng theo formart mới nhận được. 
+    description: if you understand you can contacts backend
   schema:
     type: object
     properties:
@@ -25,9 +25,6 @@ post:
       schema:
         type: object
         properties:
-          emailCheck:
-            type: int
-            example: 0
           username:
             type: string
             example: huuphu

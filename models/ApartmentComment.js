@@ -13,7 +13,6 @@ class ApartmentComment extends Model {
 ApartmentComment.init({
   id_apartment: DataTypes.NUMBER,
   comment: DataTypes.STRING,
-  // id_user:DataTypes.NUMBER,
   rattings: DataTypes.NUMBER
 }, { 
     

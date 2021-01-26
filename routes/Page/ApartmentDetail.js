@@ -9,18 +9,18 @@ const ApartmentPhotos = require('../../models/ApartmentPhotos');
 const User = require('../../models/User');
 const ApartmentDetail = require('../../models/ApartmentDetail');
 
-router.get('/detail', async (req,res) => {
+router.get('/:id/detail', async (req,res) => {
 
     const apartmentPhotos =await ApartmentPhotos.findAll({
         where:{
-            id_partment:req.query.id
+            id_partment:req.params.id
         },
         attributes:['url_image']
     })
 
     const apartment = await Apartment.findOne({
         where:{
-            id:req.query.id
+            id:req.params.id
         },
         attributes:['id','id_city','apartment_name','price','ratings']
 
@@ -29,13 +29,13 @@ router.get('/detail', async (req,res) => {
 
     const apartmentDetail = await ApartmentDetail.findOne({
         where:{
-            id_apartment:req.query.id
+            id_apartment:req.params.id
         },
     })
 
     const comment = await Comment.findAll({
         where:{
-            id_apartment:req.query.id
+            id_apartment:req.params.id
         },
         include:[{
             model:User,

@@ -90,25 +90,36 @@ GET  http://localhost:3000/home
 
 ################
 
-GET  http://localhost:3000/apartments/diaDiemNoiBatChiTiet?idDetail=2
+GET  http://localhost:3000/apartments/1/diaDiemNoiBatChiTiet
+
+#######################fix
+
+GET  http://localhost:3000/apartments/5/typeApartment
 
 #######################
 
-GET  http://localhost:3000/apartments/typeApartment?idTypeHouse=5
-
-#######################
-
-GET  http://localhost:3000/apartments/detail?id=10
-
-
-#######################
-
-GET  http://localhost:3000/apartments/checkBooking?id=2
+GET  http://localhost:3000/apartments/10/detail
 
 
 #######################
 
-GET  http://localhost:3000/infoUser?idUser=1
+POST  http://localhost:3000/apartments/checkBooking
+Content-Type: application/json
+
+{
+    "id_apartment":21,
+    "check_in": "2021-1-21",
+    "check_out": "2021-1-30"
+}
+
+####################### list booking
+
+GET  http://localhost:3000/apartments/21/listCheckBooking
+
+
+#######################
+
+POST  http://localhost:3000/infoUser/1
 
 ########################### 2021-01-21
 
@@ -144,33 +155,30 @@ Content-Type: application/json
 
 #######################
 
-POST  http://localhost:3000/SendMailForResgister/andRegisterOwn
+POST  http://localhost:3000/sendMailForResgister/andRegisterOwn
 Content-Type: application/json
 
 {
-    "emailCheck":1,
     "username" :"huuphu",
     "full_user" :"Nguyen Huu Phu",
     "date_of_birth" :"1999-10-28",
     "phone_number":"0369202024",
-    "email":"greenabcd5@gmail.com"
+    "email":"greenacd5@gmail.com"
 }
 
 #######################
 
-POST   http://localhost:3000/comfimRegister/user (need feedback)
+POST   http://localhost:3000/comfimRegister/user
 Content-Type: application/json
 
 {
-    "code":"703443",
-    "checkcode":"703443",
-    "email": "greenabcd5@gmail.com"
-
+    "code":"293009",
+    "email": "greenacd5@gmail.com"
 }
 
 #######################
 
-PUT    http://localhost:3000/updateProfileOwn/own (need feedback)
+PUT    http://localhost:3000/updateProfileOwn/own 
 Content-Type: application/json
 
 {
@@ -187,6 +195,10 @@ Content-Type: application/json
 
 #######################
 
-POST     http://localhost:3000/uploadImageOwn/profile
-Content-Type: application/json
+POST   http://localhost:3000/uploadImageOwn/avatar
+Content-Type: multipart/form-data
+
+{
+    "path":"hinh"
+}
 

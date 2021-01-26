@@ -4,11 +4,11 @@ const router = express.Router();
 
 const User = require('../../models/User');
 
-router.get('/', async (req,res) => {
+router.get('/:idUser', async (req,res) => {
 
     const user = await User.findOne({
         where:{
-            id:req.query.idUser
+            id:req.params.idUser
         },
         
     })

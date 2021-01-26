@@ -7,11 +7,23 @@ const mailer =require('./Mailer');
 
 router.post('/andRegisterOwn', async (req,res) => {
 
-
+  var flagCheckEmail = true;
   const random =  Math.floor(Math.random() * 1000000);
 
-  
-    if(req.body.emailCheck != 1)
+  const checkEmail = await RegisterAccountForOwn.findOne({
+      where:{
+          email:req.body.email
+      }
+  })
+    if(checkEmail == null){
+        flagCheckEmail = true;
+       
+    } else{
+        flagCheckEmail = false;
+    }
+
+
+    if(flagCheckEmail == true)
     {
 
         const email= req.body.email;

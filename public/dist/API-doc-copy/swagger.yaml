@@ -13,19 +13,23 @@ paths:
   /home:
     $ref: Path/Home.yaml
      
-  /apartments/diaDiemNoiBatChiTiet?idDetail=2:
+  /apartments/1/diaDiemNoiBatChiTiet:
     $ref: Path/DiaDiemNoiBatChiTiet.yaml
  
-  /apartments/typeApartment?idTypeHouse=5:
+  /apartments/5/typeApartment:
     $ref: Path/TypeApartment.yaml
   
-  /apartments/detail?id=10:
+  /apartments/10/detail:
     $ref: Path/ApartmentDetail.yaml
   
-  /apartments/checkBooking?id=21:
+  /apartments/checkBooking:
     $ref: Path/CheckBooking.yaml
 
-  /infoUser?idUser=1:
+  /apartments/21/listCheckBooking:
+    $ref: Path/ListCheckBooking.yaml
+
+
+  /infoUser/1:
     $ref: Path/InfoUser.yaml
 
   /booking:
@@ -33,6 +37,9 @@ paths:
 
   /register/user:
     $ref: Path/RegisterUser.yaml
+
+  /comfimRegister/user:
+    $ref: Path/ComfimRegisterUser.yaml
 
   /SendMailForResgister/andRegisterOwn:
     $ref: Path/SendMailForResgisterandRegisterOwn.yaml
