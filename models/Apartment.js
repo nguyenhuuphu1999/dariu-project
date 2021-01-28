@@ -10,7 +10,7 @@ Apartment.init({
     apartment_name: DataTypes.STRING,
     price: DataTypes.NUMBER,
     ratings :DataTypes.NUMBER,
-   
+    image_url:DataTypes.STRING
 }, { 
     sequelize, 
     modelName: 'Apartment',
