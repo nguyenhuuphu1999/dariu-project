@@ -2,8 +2,8 @@ const express = require('express');
 const { Op } = require('sequelize');
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const RegisterAccountForOwn = require('../../models/RegisterAccountForOwn');
-const mailer =require('./Mailer');
+const RegisterAccountForOwn = require('../../../models/RegisterAccountForOwn');
+const mailer =require('../../Modul/Mailer');
 
 router.post('/andRegisterOwn', async (req,res) => {
 

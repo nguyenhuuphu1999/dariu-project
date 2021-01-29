@@ -2,9 +2,9 @@ const express = require('express');
 const { Op } = require('sequelize');
 const router = express.Router();
 
-const RegisterAccount = require('../../models/RegisterAccountForOwn');
+const RegisterAccount = require('../../../models/RegisterAccountForOwn');
 
-router.post('/', async (req,res) => {
+router.post('/userOwn', async (req,res) => {
 
     const user = await RegisterAccount.create({
         id :req.body.id,

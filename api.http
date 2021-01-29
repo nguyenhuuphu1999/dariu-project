@@ -140,7 +140,7 @@ Content-Type: application/json
 
 ########################### 2021-01-23 (next)
 
-POST http://localhost:4000/register/user
+POST http://localhost:4000/register/userThuong
 Content-Type: application/json
 
 {
@@ -149,7 +149,23 @@ Content-Type: application/json
     "full_user":"Nguyen Huu Phu",
     "date_of_birth":"2021-10-28",
     "address":"Hoai Nhon , Binh Dinh",
-    "email":"nhp2132131@gmail.com",
+    "email":"nhp1@gmail.com",
+    "phone_number":"0369202024"
+}
+
+
+########################### 2021-01-23 (feedback)
+
+POST http://localhost:4000/RegisterOwn/userOwn
+Content-Type: application/json
+
+{
+    "username":"huuphu" ,
+    "passwd":"123456" ,
+    "full_user":"Nguyen Huu Phu",
+    "date_of_birth":"2021-10-28",
+    "address":"Hoai Nhon , Binh Dinh",
+    "email":"nhp1@gmail.com",
     "phone_number":"0369202024"
 }
 
@@ -163,7 +179,7 @@ Content-Type: application/json
     "full_user" :"Nguyen Huu Phu",
     "date_of_birth" :"1999-10-28",
     "phone_number":"0369202024",
-    "email":"greenacd5@gmail.com"
+    "email":"greenacd51@gmail.com"
 }
 
 #######################
@@ -176,9 +192,9 @@ Content-Type: application/json
     "email": "greenacd5@gmail.com"
 }
 
-#######################
+####################### Up load hinh dai dien cho chu nha su dung api rieng POST   http://localhost:4000/uploadImageOwn/avatar
 
-PUT    http://localhost:4000/updateProfileOwn/own 
+PUT    http://localhost:4001/updateProfileOwn/own 
 Content-Type: application/json
 
 {
@@ -187,18 +203,56 @@ Content-Type: application/json
     "phone_number":"0369202024",
     "full_user":"Nguyễn Hữu Phú",
     "language":"Vietnammes",
-    "id":18
+    "id":30
 }
 
 
 
 
-#######################
+#######################(28-1-2021)
 
-POST   http://localhost:4000/uploadImageOwn/avatar
+POST   http://localhost:4001/uploadImageOwn/avatar
 Content-Type: multipart/form-data
 
+#######################(28-1-2021) multiple
+
+POST   http://localhost:4001/UploadMultiple/multiple
+Content-Type: multipart/form-data
+
+
+#######################(28-1-2021)
+
+POST   http://localhost:4000/addApartment/add
+Content-Type: application/json
+
 {
-    "path":"hinh"
+    "id_district":1,
+    "id_city":null,
+    "id_district":1,
+    "id_type_house":1,
+    "apartment_name": "",
+    "price": null,
+    "ratings" :null,
+    "id_user_own":1,
+    "image_url":""
 }
+
+#######################(28-1-2021)
+
+PUT    http://localhost:4000/updateApartment/apartment
+Content-Type: application/json
+
+{
+    "id":200,
+    "id_district":1,
+    "id_city":2,
+    "id_district":1,
+    "id_type_house":1,
+    "apartment_name": "",
+    "price": 25,
+    "ratings" :5,
+    "id_user_own":1,
+    "image_url":""
+}
+
 

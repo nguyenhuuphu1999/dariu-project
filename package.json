@@ -22,6 +22,7 @@
     "mysql2": "^2.2.5",
     "nodemailer": "^6.4.17",
     "sequelize": "^6.3.5",
+    "streamifier": "^0.1.1",
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {

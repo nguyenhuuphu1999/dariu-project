@@ -35,12 +35,17 @@ var CheckBooking = require('./routes/Component/CheckBooking')
 var ListCheckBooking = require('./routes/Component/ListCheckBooking')
 var InfoUser = require('./routes/Component/InfoUser')
 var Booking = require('./routes/Page/Booking')
-var Register = require('./routes/Component/Register')
-var SendMailForandResgisterOwn  =require('./routes/Modul/SendMailForResgisterOwn');
+var Register = require('./routes/Component/Register/Register')
+var RegisterOwn = require('./routes/Component/Register/RegisterAccountForOwn')
+var SendMailForandResgisterOwn  =require('./routes/Component/Register/SendMailForResgisterOwn');
 var comfimRegister  =require('./routes/Component/ComfimResister');
-var UpdateProfileOwn  =require('./routes/Component/UpdateProfileOwn');
-var UploadImageOwn  =require('./routes/Component/UpdateImage/UploadImageOwn');
- 
+var UpdateProfileOwn  =require('./routes/Component/UpdateOwn/UpdateProfileOwn');
+var UploadImageOwn  =require('./routes/Component/UpdateImage/UploadImageAvataOwn');
+var UploadMultiple  =require('./routes/Component/UpdateImage/UploadMultiple');
+
+var AddApartment  =require('./routes/Component/AddApartmentForOwn/AddApartment');
+var UpdateApartment  =require('./routes/Component/AupdateApartment/UpdateApartment');
+
 // var swagger = require('./swagger/index.html');
 
 var app = express();
@@ -116,10 +121,17 @@ app.use('/apartments',ListCheckBooking);
 app.use('/infoUser',InfoUser);
 app.use('/booking',Booking);
 app.use('/register',Register);
+app.use('/RegisterOwn',RegisterOwn);
+
 app.use('/sendMailForResgister',SendMailForandResgisterOwn);
 app.use('/comfimRegister',comfimRegister);
 app.use('/updateProfileOwn',UpdateProfileOwn);
 app.use('/uploadImageOwn',UploadImageOwn);
+app.use('/UploadMultiple',UploadMultiple);
+
+app.use('/addApartment',AddApartment);
+app.use('/updateApartment',UpdateApartment);
+
 
 // app.use('/swagger',swagger);
 

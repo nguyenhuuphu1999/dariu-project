@@ -2,8 +2,8 @@ const express = require('express');
 const { Op } = require('sequelize');
 const router = express.Router();
 
-const Register = require('../../models/Register');
-router.post('/user', async (req,res) => {
+const Register = require('../../../models/Register');
+router.post('/userThuong', async (req,res) => {
 
     console.log("hehe")
     const register = await Register.create({
