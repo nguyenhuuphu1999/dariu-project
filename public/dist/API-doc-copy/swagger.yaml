@@ -5,6 +5,7 @@ info:
   title: Swagger Demo
 schemes:
   - http
+  - https
 basePath: ""
 tags:
 - name: API
