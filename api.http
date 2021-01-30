@@ -142,15 +142,15 @@ Content-Type: application/json
 POST http://localhost:4001/register/?type=users
 Content-Type: application/json
 
-{
-    "username":"huuphu" ,
-    "passwd":"123456" ,
-    "full_user":"Nguyen Huu Phu",
-    "date_of_birth":"2021-10-28",
-    "address":"Hoai Nhon , Binh Dinh",
-    "email":"dfdfdfdf@gmail.com",
-    "phone_number":"0369202024"
-}
+    {
+        "username":"huuphu" ,
+        "passwd":"123456" ,
+        "full_user":"Nguyen Huu Phu",
+        "date_of_birth":"2021-10-28",
+        "address":"Hoai Nhon , Binh Dinh",
+        "email":"dfdfdfdf@gmail.com",
+        "phone_number":"0369202024"
+    }
 
 
 ########################### 2021-01-23 (feedback)(bo cai nay chi lay cai tren thay test dang ky user thuong hay own thay vao cho type)

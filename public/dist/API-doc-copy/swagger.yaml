@@ -27,7 +27,9 @@ paths:
   /apartments/{id}/bookings:
     $ref: Path/ListCheckBooking.yaml
 
-
+  /promotions:
+    $ref: Path/Promotion.yaml
+    
   /users/{id}:
     $ref: Path/InfoUser.yaml
 
