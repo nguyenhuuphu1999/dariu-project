@@ -7,8 +7,8 @@ get:
   produces:
   - "application/json"
   parameters:
-  - in: body
-    name: data
+  - in: path
+    name: id
     description: Khi lick vào một loại căn hộ trên thành phố sẽ lấy ra được tất cả các căn hộ trong thành phố đó với " type = array"
   schema:
     type: object

@@ -71,7 +71,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE2
 
 
 ######################3 promotion ok
-GET    http://localhost:3000/promotions
+GET    http://localhost:4001/promotions
 
 
 
@@ -84,26 +84,25 @@ GET  http://localhost:3000/cho_o_gan_ban
 
 
 ################################################## API ################################################
-
+###ok
 
 GET  http://localhost:4000/home
 
-################
+################ok
+GET  http://localhost:4001/apartments/1/diaDiemNoiBatChiTiet
 
-GET  http://localhost:4000/apartments/1/diaDiemNoiBatChiTiet
-
-#######################fix
+#######################ok
 
 GET  http://localhost:4000/apartments/5/typeApartment
 
-#######################
+#######################ok
 
 GET  http://localhost:4000/apartments/10/detail
 
 
-#######################
+#######################(bo)
 
-POST  http://localhost:4000/apartments/checkBooking
+POST  http://localhost:4001/apartments/checkBooking
 Content-Type: application/json
 
 {
@@ -112,23 +111,23 @@ Content-Type: application/json
     "check_out": "2021-1-30"
 }
 
-####################### list booking
+####################### list booking (edit)
 
-GET  http://localhost:4000/apartments/21/listCheckBooking
+GET  http://localhost:4001/apartments/21/bookings
 
 
-#######################
+#######################(fix)
 
-POST  http://localhost:4000/infoUser/1
+GET  http://localhost:4001/users/1
 
-########################### 2021-01-21
+########################### 2021-01-21(fix)
 
-POST http://localhost:4000/booking
+POST   http://localhost:4001/apartments/bookings
 Content-Type: application/json
 
 {
     "id_apartment":21,
-    "id_user":1,
+    "id_user":2,
     "check_in":"2021-01-21",
     "check_out":"2021-01-22",
     "ho_ten":"Nguyen huu phu",
@@ -138,9 +137,9 @@ Content-Type: application/json
     "total": 71
 }
 
-########################### 2021-01-23 (next)
+########################### 2021-01-23 (next)(fix)
 
-POST http://localhost:4000/register/userThuong
+POST http://localhost:4001/register/?type=users
 Content-Type: application/json
 
 {
@@ -149,14 +148,14 @@ Content-Type: application/json
     "full_user":"Nguyen Huu Phu",
     "date_of_birth":"2021-10-28",
     "address":"Hoai Nhon , Binh Dinh",
-    "email":"nhp1@gmail.com",
+    "email":"dfdfdfdf@gmail.com",
     "phone_number":"0369202024"
 }
 
 
-########################### 2021-01-23 (feedback)
+########################### 2021-01-23 (feedback)(bo cai nay chi lay cai tren thay test dang ky user thuong hay own thay vao cho type)
 
-POST http://localhost:4000/RegisterOwn/userOwn
+POST http://localhost:4000/RegisterOwn/?type=owner
 Content-Type: application/json
 
 {
@@ -182,7 +181,7 @@ Content-Type: application/json
     "email":"greenacd51@gmail.com"
 }
 
-#######################
+#######################(xem lai)
 
 POST   http://localhost:4000/comfimRegister/user
 Content-Type: application/json
@@ -192,12 +191,14 @@ Content-Type: application/json
     "email": "greenacd5@gmail.com"
 }
 
-####################### Up load hinh dai dien cho chu nha su dung api rieng POST   http://localhost:4000/uploadImageOwn/avatar
+#######################(fix)
 
-PUT    http://localhost:4001/updateProfileOwn/own 
+PUT    http://localhost:4001/users/35?type=user 
 Content-Type: application/json
+Content-Type: multipart/form-data
 
 {
+    "path":"hinh.jpg",
     "about":"Chủ nhà vui tính hiền lành tốt bụng dễ thương đẹp trai",
     "email":"nhp2132@gmail.com",
     "phone_number":"0369202024",
@@ -209,12 +210,12 @@ Content-Type: application/json
 
 
 
-#######################(28-1-2021)
+#######################(28-1-2021)(bo)
 
 POST   http://localhost:4001/uploadImageOwn/avatar
 Content-Type: multipart/form-data
 
-#######################(28-1-2021) multiple
+#######################(28-1-2021) multiple(bo)
 
 POST   http://localhost:4001/UploadMultiple/multiple
 Content-Type: multipart/form-data
@@ -222,7 +223,7 @@ Content-Type: multipart/form-data
 
 #######################(28-1-2021)
 
-POST   http://localhost:4000/addApartment/add
+POST   http://localhost:4001/apartment
 Content-Type: application/json
 
 {
@@ -237,13 +238,12 @@ Content-Type: application/json
     "image_url":""
 }
 
-#######################(28-1-2021)
+#######################(28-1-2021)(fix)
 
-PUT    http://localhost:4000/updateApartment/apartment
+PUT   http://localhost:4001/apartment/157
 Content-Type: application/json
 
 {
-    "id":200,
     "id_district":1,
     "id_city":2,
     "id_district":1,

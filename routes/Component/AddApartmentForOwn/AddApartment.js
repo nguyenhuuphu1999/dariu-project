@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Apartment = require('../../../models/Apartment');
 
-router.post('/add' ,async(req,res)=>{
+router.post('/' ,async(req,res)=>{
     const addPartment = await Apartment.create({
         id_city:req.body.id_city,
         id_district:req.body.id_district,

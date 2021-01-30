@@ -7,8 +7,8 @@ get:
   produces:
   - "application/json"
   parameters:
-  - in: body
-    name: data
+  - in: path
+    name: id
     description: lay ra danh sach ngay cua phong do theo ma id phong
   schema:
     type: object

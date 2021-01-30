@@ -14,36 +14,32 @@ paths:
   /home:
     $ref: Path/Home.yaml
      
-  /apartments/1/diaDiemNoiBatChiTiet:
+  /apartments/{id}/diaDiemNoiBatChiTiet:
     $ref: Path/DiaDiemNoiBatChiTiet.yaml
  
-  /apartments/5/typeApartment:
+  /apartments/{id}/typeApartment:
     $ref: Path/TypeApartment.yaml
   
-  /apartments/10/detail:
+  /apartments/{id}/detail:
     $ref: Path/ApartmentDetail.yaml
   
-  /apartments/checkBooking:
-    $ref: Path/CheckBooking.yaml
 
-  /apartments/21/listCheckBooking:
+  /apartments/{id}/bookings:
     $ref: Path/ListCheckBooking.yaml
 
 
-  /infoUser/1:
+  /users/{id}:
     $ref: Path/InfoUser.yaml
 
-  /booking:
+  /apartments/bookings:
     $ref: Path/SaveInfoBooking.yaml
 
-  /register/user:
+  /register/?type={users}:
     $ref: Path/RegisterUser.yaml
 
   /comfimRegister/user:
     $ref: Path/ComfimRegisterUser.yaml
 
-  /SendMailForResgister/andRegisterOwn:
-    $ref: Path/SendMailForResgisterandRegisterOwn.yaml
-  
-  /updateProfileOwn/own:
+ 
+  /users/{id}?type=user:
     $ref: Path/UpdateProfileOwn.yaml

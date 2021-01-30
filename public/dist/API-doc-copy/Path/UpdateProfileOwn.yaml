@@ -7,6 +7,8 @@ put:
   produces:
   - "application/json"
   parameters:
+  - in: query
+    name: type
   - in: body
     name: data
     description: Thông tin chu nhà sẽ được updat theo id của chủ nhà

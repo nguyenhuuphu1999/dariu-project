@@ -4,7 +4,7 @@ const router = express.Router();
 
 const CheckBookings = require('../../models/ApartmentCheckBookings')
 
-router.get('/:id_apartment/listCheckBooking', async (req,res) => {
+router.get('/:id_apartment/bookings', async (req,res) => {
         
    
        

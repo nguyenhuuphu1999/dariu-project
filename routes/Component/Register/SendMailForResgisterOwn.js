@@ -15,15 +15,8 @@ router.post('/andRegisterOwn', async (req,res) => {
           email:req.body.email
       }
   })
-    if(checkEmail == null){
-        flagCheckEmail = true;
-       
-    } else{
-        flagCheckEmail = false;
-    }
 
-
-    if(flagCheckEmail == true)
+    if(checkEmail == "")
     {
 
         const email= req.body.email;

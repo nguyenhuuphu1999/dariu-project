@@ -4,11 +4,11 @@ const router = express.Router();
 
 const UpdateApartment= require('../../../models/Apartment');
 
-router.put('/apartment', async (req,res) => {
+router.put('/:id', async (req,res) => {
 
     const check = await UpdateApartment.findAll({
         where:{
-            id:req.body.id
+            id:req.params.id
         }
     })
    
@@ -28,7 +28,7 @@ router.put('/apartment', async (req,res) => {
             },
             {
                 where:{
-                    id:req.body.id
+                    id:req.params.id
                 }
             }
            

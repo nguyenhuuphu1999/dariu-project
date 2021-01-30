@@ -22,7 +22,7 @@ var usersRouter = require('./routes/users');
 // var footer_don_tiep_khachRouter = require('./routes/Footer/title_don_tiep_khach');
 // var footer_gioi_thieuRouter = require('./routes/Footer/title_gioi_thieu');
 // var LoginRouter = require('./routes/Login');
-// var PromotionRouter = require('./routes/Promotion');
+var PromotionRouter = require('./routes/Promotion');
 // var HotelRouter = require('./routes/Hotel_nearBy');
 // var ChoOGanBanRouter = require('./routes/Cho_o_gan_ban');
 ///////////////////////////////////////   API    /////////////////////////////////////////////////////////
@@ -34,7 +34,7 @@ var ApartmentDetail = require('./routes/Page/ApartmentDetail')
 var CheckBooking = require('./routes/Component/CheckBooking')
 var ListCheckBooking = require('./routes/Component/ListCheckBooking')
 var InfoUser = require('./routes/Component/InfoUser')
-var Booking = require('./routes/Page/Booking')
+var apartments = require('./routes/Page/Booking')
 var Register = require('./routes/Component/Register/Register')
 var RegisterOwn = require('./routes/Component/Register/RegisterAccountForOwn')
 var SendMailForandResgisterOwn  =require('./routes/Component/Register/SendMailForResgisterOwn');
@@ -66,7 +66,7 @@ var app = express();
 
 // view engine setup
 
-var whitelist = ['http://localhost:3000','https://api-dariu.web.app', 'https://project-dariu.herokuapp.com','http://localhost:8001','https://do-an-nho-nho.herokuapp.com']
+var whitelist = ['http://localhost:3000','https://api-dariu.web.app', 'https://project-dariu.herokuapp.com','http://localhost:8001','https://do-an-nho-nho.herokuapp.com','http://localhost:4001']
 var corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
@@ -106,7 +106,7 @@ app.use('/users', usersRouter);
 // app.use('/apartment',ApartmentCommentDeatalRouter);
 // app.use('/dang_ky',Dang_kyRouter);
 // app.use('/login',LoginRouter);
-// app.use('/promotions',PromotionRouter);
+app.use('/promotions',PromotionRouter);
 // app.use('/hotelnearby',HotelRouter);
 // app.use('/cho_o_gan_ban',ChoOGanBanRouter);
 
@@ -118,19 +118,19 @@ app.use('/apartments',TypeApartmentRouter);
 app.use('/apartments',ApartmentDetail);
 app.use('/apartments',CheckBooking);
 app.use('/apartments',ListCheckBooking);
-app.use('/infoUser',InfoUser);
-app.use('/booking',Booking);
+app.use('/users',InfoUser);
+app.use('/apartments',apartments);
 app.use('/register',Register);
 app.use('/RegisterOwn',RegisterOwn);
 
 app.use('/sendMailForResgister',SendMailForandResgisterOwn);
 app.use('/comfimRegister',comfimRegister);
-app.use('/updateProfileOwn',UpdateProfileOwn);
+app.use('/users',UpdateProfileOwn);
 app.use('/uploadImageOwn',UploadImageOwn);
 app.use('/UploadMultiple',UploadMultiple);
 
-app.use('/addApartment',AddApartment);
-app.use('/updateApartment',UpdateApartment);
+app.use('/apartment',AddApartment);
+app.use('/apartment',UpdateApartment);
 
 
 // app.use('/swagger',swagger);

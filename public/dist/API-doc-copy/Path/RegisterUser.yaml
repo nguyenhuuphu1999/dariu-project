@@ -7,6 +7,8 @@ post:
   produces:
   - "application/json"
   parameters:
+  - in: query
+    name: type
   - in: body
     name: data
     description: note Email đăng ký không được trùng. Email(unique)

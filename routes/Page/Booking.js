@@ -3,7 +3,7 @@ const { Op, where } = require('sequelize');
 const router = express.Router();
 
 const booking = require('../../models/ApartmentBooking');
-router.post('/', async (req,res) => {
+router.post('/bookings', async (req,res) => {
 
     const  infoBooking = await booking.create({
 
@@ -16,7 +16,9 @@ router.post('/', async (req,res) => {
         so_dien_thoai:req.body.so_dien_thoai,
         phi_dich_vu:req.body.phi_dich_vu,
         total:req.body.total
-    })
+    
+    }
+    )
 
     res.json({
         infoBooking
