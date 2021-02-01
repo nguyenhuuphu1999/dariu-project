@@ -73,10 +73,26 @@ router.get('/:id/typeApartment', async (req,res) => {
         },
         attributes:['title']
     })
+
+    const RattingGood = await Apartment.findAll({
+        where:{
+            [Op.and]: [
+                {
+                    id_type_house:req.params.id
+                }, 
+                {
+                    ratings:{[Op.gt]: 4}
+             
+                }
+            ]
+            
+        },
+       limit:4
+    })
     
 
   res.json({ 
-    typeHouse,typeApartment
+    typeHouse,typeApartment,RattingGood
   });
 
 });
