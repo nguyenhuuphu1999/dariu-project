@@ -9,6 +9,8 @@ get:
   parameters:
   - in: path
     name: id
+  - in: path
+    name: id_type_house
     description: Khi lick vào một địa điểm nổi bật trên thành phố sẽ lấy ra được tất cả các căn hộ trong thành phố đó với " type = array"
   schema:
     type: object

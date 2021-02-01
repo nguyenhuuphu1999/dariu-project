@@ -14,7 +14,7 @@ paths:
   /home:
     $ref: Path/Home.yaml
      
-  /apartments/{id}/diaDiemNoiBatChiTiet:
+  /apartments/{id}/{id_type_house}/diaDiemNoiBatChiTiet:
     $ref: Path/DiaDiemNoiBatChiTiet.yaml
  
   /apartments/{id}/typeApartment:

@@ -114,10 +114,10 @@ app.use('/promotions',PromotionRouter);
 
 app.use('/home',HomeRouter);
 app.use('/apartments',DiaDiemNoiBatChiTietRouter);
-app.use('/apartments',TypeApartmentRouter);
-app.use('/apartments',ApartmentDetail);
-app.use('/apartments',CheckBooking);
-app.use('/apartments',ListCheckBooking);
+// app.use('/apartments',TypeApartmentRouter);
+// app.use('/apartments',ApartmentDetail);
+// app.use('/apartments',CheckBooking);
+// app.use('/apartments',ListCheckBooking);
 app.use('/users',InfoUser);
 app.use('/apartments',apartments);
 app.use('/register',Register);
