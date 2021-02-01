@@ -10,6 +10,8 @@ const ApartmentPhotos = require('../../models/ApartmentPhotos');
 const ApartmentDetail = require('../../models/ApartmentDetail');
 const Comment = require('../../models/ApartmentComment');
 const User = require('../../models/User');
+
+const City = require('../../models/City');
 const { query } = require('../../models/sequelize');
 
 
@@ -32,6 +34,12 @@ router.get('/:id/:id_type_house/diaDiemNoiBatChiTiet', async (req,res) => {
         }]
     });
 
+    const city = await City.findOne({
+        where:{
+            id:req.params.id
+        }
+    })
+
    
 
     const diaDiemNoiBat = await DiaDiemNoiBat.findAll({
@@ -39,7 +47,7 @@ router.get('/:id/:id_type_house/diaDiemNoiBatChiTiet', async (req,res) => {
     })
 
     res.json({
-        diaDiemNoiBatChiTiet,diaDiemNoiBat
+        city,diaDiemNoiBatChiTiet,diaDiemNoiBat
     })
 });
 
