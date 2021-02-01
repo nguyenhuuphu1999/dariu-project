@@ -12,6 +12,9 @@ const Comment = require('../../models/ApartmentComment');
 const User = require('../../models/User');
 
 const City = require('../../models/City');
+
+const TypeHouse = require('../../models/TypeHouse');
+
 const { query } = require('../../models/sequelize');
 
 
@@ -63,11 +66,17 @@ router.get('/:id/typeApartment', async (req,res) => {
             attributes:['url_image']
 
         }]
-        })
+    })
+    const typeHouse = await TypeHouse.findOne({
+        where:{
+            id:req.params.id
+        },
+        attributes:['title']
+    })
     
 
   res.json({ 
-    typeApartment
+    typeHouse,typeApartment
   });
 
 });
