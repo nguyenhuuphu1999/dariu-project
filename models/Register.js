@@ -8,7 +8,7 @@ Register.init({
     username:DataTypes.STRING,
     passwd:DataTypes.STRING,
     id_type_user:DataTypes.NUMBER,
-    full_user:DataTypes.STRING,
+    full_name:DataTypes.STRING,
     date_of_birth:DataTypes.DATE,
     address:DataTypes.STRING,
     email:DataTypes.STRING,

@@ -7,7 +7,7 @@ RegisterAccountForOwn.init({
     
     username :DataTypes.STRING,
     id_type_user :DataTypes.NUMBER,
-    full_user :DataTypes.STRING,
+    full_name :DataTypes.STRING,
     resert:DataTypes.STRING,
     key_register:DataTypes.STRING,
     phone_number:DataTypes.STRING,

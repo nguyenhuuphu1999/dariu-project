@@ -24,7 +24,7 @@ router.post('/', async (req,res) => {
                 username:req.body.username,
                 passwd:req.body.passwd,
                 id_type_user:2,
-                full_user:req.body.full_user,
+                full_name:req.body.full_name,
                 date_of_birth:req.body.date_of_birth,
                 address:req.body.address,
                 email:req.body.email,
@@ -37,12 +37,14 @@ router.post('/', async (req,res) => {
         
             res.json({ 
                 message:"Register successfull",
-                register:register
+                register:register,
+                error:false
             });
         }else{
             
             res.json({ 
-                message:"Register fail , please check your email . "
+                message:"Register fail , please check your email . ",
+                error:true
             });
         }
 
@@ -78,7 +80,7 @@ router.post('/', async (req,res) => {
         const register = await RegisterAccountForOwn.create({
             username :req.body.username,
             id_type_user :4,
-            full_user :req.body.full_user,
+            full_name :req.body.full_name,
             avatar :null,
             resert:0,
             key_register:random,
@@ -93,12 +95,15 @@ router.post('/', async (req,res) => {
     
         res.json({ 
             message:"Register successfull",
-            register:register
+            register:register,
+            error:false
         });
     }else{
             
         res.json({ 
-            message:"Register fail , please check your email . "
+            message:"Register fail , please check your email . ",
+            error:true
+
         });
     }
 
