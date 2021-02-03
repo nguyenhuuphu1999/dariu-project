@@ -93,7 +93,7 @@ GET  http://localhost:4001/apartments/2/1/diaDiemNoiBatChiTiet
 
 #######################ok
 
-GET  http://localhost:4001/apartments/4/typeApartment
+GET  http://localhost:4001/apartments/1/typeApartment
 
 #######################ok
 

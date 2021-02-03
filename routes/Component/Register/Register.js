@@ -12,7 +12,7 @@ router.post('/', async (req,res) => {
     var flagCheckEmail = true;
     console.log(req.query.type)
 
-    if(req.query.type == "normal"){
+    if(req.query.type == "user"){
 
         const checkEmail = await Register.findOne({
             where:{
