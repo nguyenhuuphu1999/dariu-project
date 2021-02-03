@@ -66,11 +66,11 @@ router.post('/', async (req,res) => {
         const mailOptions = mailer.mailOptions(email,title,content)
     
         transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                res.json({
-                    error
-                })
-            }
+            // if (error) {
+            //     res.json({
+            //         error
+            //     })
+            // }
     
         });
 
