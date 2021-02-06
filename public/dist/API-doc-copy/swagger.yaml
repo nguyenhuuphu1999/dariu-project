@@ -55,3 +55,6 @@ paths:
 
   /city:
     $ref: Path/City.yaml
+  
+  /typeHouse:
+    $ref: Path/TypeHouse.yaml
