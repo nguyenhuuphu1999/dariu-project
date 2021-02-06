@@ -45,7 +45,7 @@ var UploadMultiple  =require('./routes/Component/UpdateImage/UploadMultiple');
 var City = require('./routes/Component/City/City');
 var AddApartment  =require('./routes/Component/AddApartmentForOwn/AddApartment');
 var UpdateApartment  =require('./routes/Component/AupdateApartment/UpdateApartment');
-
+var TypeHouse = require('./routes/Component/TypeHouse/TypeHouse');
 // var swagger = require('./swagger/index.html');
 
 var app = express();
@@ -132,6 +132,7 @@ app.use('/UploadMultiple',UploadMultiple);
 app.use('/apartment',AddApartment);
 app.use('/apartment',UpdateApartment);
 app.use('/city',City);
+app.use('/typeHouse', TypeHouse);
 
 
 // app.use('/swagger',swagger);
