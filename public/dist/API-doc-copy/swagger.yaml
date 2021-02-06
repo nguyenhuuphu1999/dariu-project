@@ -45,3 +45,13 @@ paths:
  
   /users/{id}?type=user:
     $ref: Path/UpdateProfileOwn.yaml
+
+
+  /apartment:
+    $ref: Path/Apartment.yaml
+  
+  /apartment/{id}:
+    $ref: Path/UpdateApartment.yaml
+
+  /city:
+    $ref: Path/City.yaml

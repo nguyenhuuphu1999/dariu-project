@@ -42,7 +42,7 @@ var comfimRegister  =require('./routes/Component/ComfimResister');
 var UpdateProfileOwn  =require('./routes/Component/UpdateOwn/UpdateProfileOwn');
 var UploadImageOwn  =require('./routes/Component/UpdateImage/UploadImageAvataOwn');
 var UploadMultiple  =require('./routes/Component/UpdateImage/UploadMultiple');
-
+var City = require('./routes/Component/City/City');
 var AddApartment  =require('./routes/Component/AddApartmentForOwn/AddApartment');
 var UpdateApartment  =require('./routes/Component/AupdateApartment/UpdateApartment');
 
@@ -131,6 +131,7 @@ app.use('/UploadMultiple',UploadMultiple);
 
 app.use('/apartment',AddApartment);
 app.use('/apartment',UpdateApartment);
+app.use('/city',City);
 
 
 // app.use('/swagger',swagger);

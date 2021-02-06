@@ -229,10 +229,25 @@ Content-Type: application/json
 {
     "id_district":1,
     "id_city":null,
-    "id_district":1,
+   
     "id_type_house":1,
     "apartment_name": "",
     "price": null,
+    "ratings" :null,
+    "id_user_own":1,
+    "image_url":""
+}
+#######################(28-1-2021)
+
+PUT    http://localhost:4001/apartment/160
+Content-Type: application/json
+
+{
+    "id_district":1,
+    "id_city":1,
+    "id_type_house":1,
+    "apartment_name": "",
+    "price": 20,
     "ratings" :null,
     "id_user_own":1,
     "image_url":""
@@ -254,5 +269,13 @@ Content-Type: application/json
     "id_user_own":1,
     "image_url":""
 }
+
+
+#######################City
+
+GET   http://localhost:4001/city
+Content-Type: application/json
+
+
 
 
