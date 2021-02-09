@@ -7,7 +7,7 @@ const TypeHouse = require('../../../models/TypeHouse');
 router.get('/',async (req,res)=>{
     const resultTypeHouse = await TypeHouse.findAll({})
     res.json({
-        message:"Get data Successfull",
+        message:"Get data TypeHouse Successfull ",
         data:resultTypeHouse,
         err:false
     })

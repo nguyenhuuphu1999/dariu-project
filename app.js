@@ -47,6 +47,7 @@ var AddApartment  =require('./routes/Component/AddApartmentForOwn/AddApartment')
 var UpdateApartment  =require('./routes/Component/AupdateApartment/UpdateApartment');
 var TypeHouse = require('./routes/Component/TypeHouse/TypeHouse');
 // var swagger = require('./swagger/index.html');
+var Rooms = require('./routes/Component/Rooms/Rooms');
 
 var app = express();
 
@@ -133,6 +134,7 @@ app.use('/apartment',AddApartment);
 app.use('/apartment',UpdateApartment);
 app.use('/city',City);
 app.use('/typeHouse', TypeHouse);
+app.use('/room', Rooms);
 
 
 // app.use('/swagger',swagger);

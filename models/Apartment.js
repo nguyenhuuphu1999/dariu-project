@@ -13,7 +13,6 @@ Apartment.init({
     ratings :DataTypes.NUMBER,
     image_url:DataTypes.STRING,
     id_user_own:DataTypes.STRING,
-    address:DataTypes.STRING,
     note_apartment:DataTypes.STRING,
     
 }, { 

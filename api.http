@@ -276,6 +276,16 @@ Content-Type: application/json
 GET   http://localhost:4001/city
 Content-Type: application/json
 
+#######################TypeHouse
+
+GET   http://localhost:4001/typeHouse
+Content-Type: application/json
+
+#######################Room
+
+GET   http://localhost:4001/room
+Content-Type: application/json
+
 
 
 

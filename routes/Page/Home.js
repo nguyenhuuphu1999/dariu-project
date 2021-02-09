@@ -29,11 +29,11 @@ router.get('/', async (req,res) => {
         [Op.gte]:5
       }
     },
-    include:[{
-      model:User,
-      as:'user',
-      attributes: ['address']
-    }]
+    // include:[{
+    //   model:User,
+    //   as:'user',
+    //   attributes: ['address']
+    // }]
   })
 
   res.json({ 
