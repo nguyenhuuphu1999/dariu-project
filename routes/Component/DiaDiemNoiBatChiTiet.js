@@ -18,24 +18,76 @@ const TypeHouse = require('../../models/TypeHouse');
 const { query } = require('../../models/sequelize');
 
 
-router.get('/:id/:id_type_house/diaDiemNoiBatChiTiet', async (req,res) => {
+router.get('/city/:id/apartment', async (req,res) => {
 
-    console.log(req.params.id)
-    const diaDiemNoiBatChiTiet = await Apartment.findAll({ 
-        where:{
-            [Op.and]: [
-                        {id_city:req.params.id},
-                        {id_type_house:req.params.id_type_house}
-                    ]
-
-            
-        },
-        include:[{
-            model:ApartmentPhoto,
-            as:'apartment_image',
-            attributes:['url_image']
-        }]
-    });
+    console.log(req.query.type);
+    var diaDiemNoiBatChiTiet = '';
+    if(req.query.type == 'hotels'){
+         diaDiemNoiBatChiTiet = await Apartment.findAll({ 
+            where:{
+                [Op.and]: [
+                            {id_city:req.params.id},
+                            {id_type_house:1}
+                        ]
+    
+                
+            },
+            include:[{
+                model:ApartmentPhoto,
+                as:'apartment_image',
+                attributes:['url_image']
+            }]
+        });
+    }else if(req.query.type == 'apartment' ){
+         diaDiemNoiBatChiTiet = await Apartment.findAll({ 
+            where:{
+                [Op.and]: [
+                            {id_city:req.params.id},
+                            {id_type_house:2}
+                        ]
+    
+                
+            },
+            include:[{
+                model:ApartmentPhoto,
+                as:'apartment_image',
+                attributes:['url_image']
+            }]
+        });
+    }else if(req.query.type == 'motels'){
+         diaDiemNoiBatChiTiet = await Apartment.findAll({ 
+            where:{
+                [Op.and]: [
+                            {id_city:req.params.id},
+                            {id_type_house:3}
+                        ]
+    
+                
+            },
+            include:[{
+                model:ApartmentPhoto,
+                as:'apartment_image',
+                attributes:['url_image']
+            }]
+        });
+    }else{
+         diaDiemNoiBatChiTiet = await Apartment.findAll({ 
+            where:{
+                [Op.and]: [
+                            {id_city:req.params.id},
+                            {id_type_house:4}
+                        ]
+    
+                
+            },
+            include:[{
+                model:ApartmentPhoto,
+                as:'apartment_image',
+                attributes:['url_image']
+            }]
+        });
+    }
+   
 
     const city = await City.findOne({
         where:{

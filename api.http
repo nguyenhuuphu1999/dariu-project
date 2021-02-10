@@ -89,7 +89,7 @@ GET  http://localhost:3000/cho_o_gan_ban
 GET  http://localhost:4001/home
 
 ################ok
-GET  http://localhost:4001/apartments/2/1/diaDiemNoiBatChiTiet
+GET  http://localhost:4001/apartments/city/2/apartment?type=hotels
 
 #######################ok
 

@@ -9,9 +9,9 @@ get:
   parameters:
   - in: path
     name: id
-  - in: path
-    name: id_type_house
-    description: Khi lick vào một địa điểm nổi bật trên thành phố sẽ lấy ra được tất cả các căn hộ trong thành phố đó với " type = array"
+  - in: query
+    name: type
+    description: type hotels=khách sạn , apartment= căn hộ , motels=khách sạn cho thuê và '' = tầng trệt
   schema:
     type: object
     properties:
