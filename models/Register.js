@@ -17,6 +17,7 @@ Register.init({
     phone_number:DataTypes.STRING,
     become_a_part_of_us:DataTypes.NUMBER,
     created_at:DataTypes.DATE
+  
 }, { 
     sequelize, 
     modelName: 'Register',

@@ -3,15 +3,15 @@ const { Op } = require('sequelize');
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const mailer =require('../../Modul/Mailer');
-
+const jwt = require('jsonwebtoken');
 const Register = require('../../../models/Register');
 const RegisterAccountForOwn = require('../../../models/RegisterAccountForOwn');
-
+const { request } = require('express');
+const Token = require('../../../models/Token');
 router.post('/', async (req,res) => {
 
     var flagCheckEmail = true;
     console.log(req.query.type)
-
     if(req.query.type == "user"){
 
         const checkEmail = await Register.findOne({
@@ -19,6 +19,13 @@ router.post('/', async (req,res) => {
                 email:req.body.email
             }
         })
+        const userData = {
+           
+            name: req.body.username,
+            email: req.body.email,
+          }
+        var token = jwt.sign({data:userData},req.body.username,{algorithm:'HS512',expiresIn:'3h' })
+
         if(checkEmail == null){
             const register = await Register.create({
                 username:req.body.username,
@@ -32,12 +39,20 @@ router.post('/', async (req,res) => {
                 resert:0,
                 phone_number:req.body.phone_number,
                 become_a_part_of_us:0,
-                created_at:Date.now()
+                created_at:Date.now(),
+              
             })
-        
+
+           
+
+            const result_token  = await Token.create({
+                id_user:register.id,
+                token:token,
+                expiration:'3h'
+            }) 
             res.json({ 
                 message:"Register successfull",
-                register:register,
+                register:register,result_token,
                 error:false
             });
         }else{
@@ -111,6 +126,7 @@ router.post('/', async (req,res) => {
    
 
 }); 
+
 
 
 module.exports = router;

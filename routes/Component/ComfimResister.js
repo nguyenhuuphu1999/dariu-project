@@ -7,6 +7,7 @@ const { findOne } = require('../../models/RegisterAccountForOwn');
 const RegisterAccountForOwn = require('../../models/RegisterAccountForOwn');
 router.post('/user', async (req,res) => {
 
+    console.log(req.body)
     var flagCheckKeyRegister = true;
     const checkCode = await RegisterAccountForOwn.findOne({
         where:{
@@ -49,9 +50,11 @@ router.post('/user', async (req,res) => {
     )
     res.json({
         message:"Update Successfull",
+        err:false
     })
   }else{
     res.json({
+        err:true,
         message:"Email khong hop le hoat ma kich hoat da het han",
     })
   }

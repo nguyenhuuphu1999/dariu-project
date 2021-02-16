@@ -4,11 +4,11 @@ const ApartmentComment = require('./ApartmentComment');
 class User extends Model {}
 
 User.init({
-  full_user:DataTypes.STRING,
+  full_name:DataTypes.STRING,
   email:DataTypes.STRING,
   phone_number:DataTypes.STRING,
   address: DataTypes.STRING,
-
+  description:DataTypes.STRING
 }, { 
     sequelize, 
     modelName: 'User', 

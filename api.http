@@ -113,7 +113,7 @@ Content-Type: application/json
 
 ####################### list booking (edit)
 
-GET  http://localhost:4001/apartments/21/bookings
+GET  http://localhost:4001/apartments/11/bookings
 
 
 #######################(fix)
@@ -155,7 +155,7 @@ Content-Type: application/json
 
 ########################### 2021-01-23 (feedback)(bo cai nay chi lay cai tren thay test dang ky user thuong hay own thay vao cho type)
 
-POST http://localhost:4000/RegisterOwn/?type=owner
+POST http://localhost:4001/Register/?type=user
 Content-Type: application/json
 
 {
@@ -164,31 +164,31 @@ Content-Type: application/json
     "full_user":"Nguyen Huu Phu",
     "date_of_birth":"2021-10-28",
     "address":"Hoai Nhon , Binh Dinh",
-    "email":"nhp1@gmail.com",
+    "email":"nhpsdsfdsdawfdf1@gmail.com",
     "phone_number":"0369202024"
 }
 
 #######################
 
-POST  http://localhost:4000/sendMailForResgister/andRegisterOwn
+POST  http://localhost:4001/sendMailForResgister/andRegisterOwn
 Content-Type: application/json
 
 {
-    "username" :"huuphu",
-    "full_user" :"Nguyen Huu Phu",
+    "username" :"",
+    "full_user" :"",
     "date_of_birth" :"1999-10-28",
-    "phone_number":"0369202024",
-    "email":"greenacd51@gmail.com"
+    "phone_number":"",
+    "email":""
 }
 
 #######################(xem lai)
 
-POST   http://localhost:4000/comfimRegister/user
+POST   http://localhost:4001/comfimRegister/user
 Content-Type: application/json
 
 {
-    "code":"293009",
-    "email": "greenacd5@gmail.com"
+    "code":"136200",
+    "email": "nhp2132@gmail.comjgykhjgfds"
 }
 
 #######################(fix)
@@ -286,6 +286,31 @@ Content-Type: application/json
 GET   http://localhost:4001/room
 Content-Type: application/json
 
+#######################Room
 
+POST   http://localhost:4001/login/user
+Content-Type: application/json
+Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0ZW4iOiJwaHUiLCJobyI6Im5ndXllbiIsImlhdCI6MTYxMzI5MDc3NCwiZXhwIjoxNjEzMzAxNTc0fQ.H8Glyd6F4LHKADjr3zAm5I5qtMxgyPKW3PW-3cvUhkCfJlm0Q0nl9zmgHHyh26u8sCSsMs_YmVblg7oJwbl5ZA
+
+{
+    "email": "nhp2132@gmail.com",
+    "passwd":"123456"
+}
+
+
+##################
+PUT http://localhost:4001/profile/1
+Content-Type: :application/json
+
+{
+    "full_name":"Nguyen huu phu",
+    "email":"nhp2132@gmail.com",
+    "phone_number":"0865452090",
+    "address": "Binh Định",
+    "description":"Ẹp chai hahahahahahhaahha"
+}
+
+##################
+GET  http://localhost:4001/profile/1
 
 

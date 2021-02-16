@@ -1,4 +1,4 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
+const { Sequelize, Model, DataTypes, STRING } = require('sequelize');
 const sequelize = require('./sequelize');
 
 class RegisterAccountForOwn extends Model {}
@@ -16,7 +16,8 @@ RegisterAccountForOwn.init({
     language:DataTypes.STRING,
     created_at:DataTypes.DATE,
     status:DataTypes.NUMBER,
-    avartar:DataTypes.STRING
+    avartar:DataTypes.STRING,
+    description:DataTypes.STRING
 }, { 
     sequelize, 
     modelName: 'RegisterAccountForOwn',

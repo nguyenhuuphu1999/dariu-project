@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors')
-
+var bodyParser = require('body-parser')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 // var lease_houseRouter = require('./routes/Page_home/lease-house.js');
@@ -27,6 +27,7 @@ var PromotionRouter = require('./routes/Promotion');
 // var ChoOGanBanRouter = require('./routes/Cho_o_gan_ban');
 ///////////////////////////////////////   API    /////////////////////////////////////////////////////////
 
+
 var HomeRouter = require('./routes/Page/Home');
 var DiaDiemNoiBatChiTietRouter = require('./routes/Component/DiaDiemNoiBatChiTiet');
 var TypeApartmentRouter = require('./routes/Component/TypeApartment');
@@ -46,6 +47,9 @@ var City = require('./routes/Component/City/City');
 var AddApartment  =require('./routes/Component/AddApartmentForOwn/AddApartment');
 var UpdateApartment  =require('./routes/Component/AupdateApartment/UpdateApartment');
 var TypeHouse = require('./routes/Component/TypeHouse/TypeHouse');
+var Login = require('./routes/Login/Login');
+var Profile = require('./routes/Component/Profile/Profile');
+
 // var swagger = require('./swagger/index.html');
 var Rooms = require('./routes/Component/Rooms/Rooms');
 
@@ -77,7 +81,8 @@ var corsOptions = {
     }
   }
 }
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}))
 app.use(cors(corsOptions))
 
 app.set('views', path.join(__dirname, 'views'));
@@ -121,6 +126,7 @@ app.use('/apartments',DiaDiemNoiBatChiTietRouter);
 // app.use('/apartments',ListCheckBooking);
 app.use('/users',InfoUser);
 app.use('/apartments',apartments);
+app.use('/apartments',CheckBooking);
 app.use('/register',Register);
 app.use('/RegisterOwn',RegisterOwn);
 
@@ -135,6 +141,8 @@ app.use('/apartment',UpdateApartment);
 app.use('/city',City);
 app.use('/typeHouse', TypeHouse);
 app.use('/room', Rooms);
+app.use('/login',Login);
+app.use('/profile',Profile)
 
 
 // app.use('/swagger',swagger);
