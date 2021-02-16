@@ -24,4 +24,13 @@ post:
       description: /apartments/checkBooking
       schema:
         type: object
-       
+        properties:
+          id_apartment:
+            type: number
+            example: 21
+          check_in:
+            type: string
+            example: "2021-1-21"
+          check_out:
+            type: string
+            example: "2021-1-30"

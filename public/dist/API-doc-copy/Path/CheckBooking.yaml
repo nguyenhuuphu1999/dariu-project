@@ -1,4 +1,4 @@
-post:
+get:
   tags:
   - Check Booking
   summary: 
