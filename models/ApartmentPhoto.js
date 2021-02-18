@@ -14,14 +14,6 @@ ApartmentPhoto.init({
     timestamps: false
 });
 
-// Apartment.hasMany(ApartmentPhoto,{
-//   foreignKey:'id'
-// })
-
-// ApartmentPhoto.belongsTo(Apartment,{
-//   as:'apartment',
-//   foreignKey:'id_apartment'
-// })
 
 ApartmentPhoto.hasOne(Apartment,{
   foreignKey:'id'

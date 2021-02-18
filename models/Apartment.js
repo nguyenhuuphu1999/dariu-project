@@ -14,7 +14,7 @@ Apartment.init({
     image_url:DataTypes.STRING,
     id_user_own:DataTypes.STRING,
     note_apartment:DataTypes.STRING,
-    
+
 }, { 
     sequelize, 
     modelName: 'Apartment',

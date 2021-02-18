@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
 
-const sequelize = new Sequelize('freedbtech_sdfdsgdsfg', 'freedbtech_nguyen huu phu', 'Nyc2019@', {
+const sequelize = new Sequelize('freedbtech_Go', 'freedbtech_nguyen huu phu', 'Nyc2019@', {
     host: 'freedb.tech',
     dialect: 'mysql' /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
 

@@ -8,7 +8,9 @@ User.init({
   email:DataTypes.STRING,
   phone_number:DataTypes.STRING,
   address: DataTypes.STRING,
-  description:DataTypes.STRING
+  description:DataTypes.STRING,
+  created_at:DataTypes.DATE	,
+  avatar:DataTypes.STRING
 }, { 
     sequelize, 
     modelName: 'User', 

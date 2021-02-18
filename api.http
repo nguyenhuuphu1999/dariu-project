@@ -229,7 +229,7 @@ Content-Type: application/json
 {
     "id_district":1,
     "id_city":null,
-   
+    
     "id_type_house":1,
     "apartment_name": "",
     "price": null,
@@ -239,6 +239,10 @@ Content-Type: application/json
 }
 #######################(28-1-2021)
 
+GET http://localhost:4001/apartment/1?page=5
+
+
+####################
 PUT    http://localhost:4001/apartment/160
 Content-Type: application/json
 
@@ -252,6 +256,8 @@ Content-Type: application/json
     "id_user_own":1,
     "image_url":""
 }
+####################3
+DELETE  http://localhost:4001/apartment/10
 
 #######################(28-1-2021)(fix)
 
@@ -300,7 +306,7 @@ Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0ZW4iOiJwaHUiLCJoby
 
 ##################
 PUT http://localhost:4001/profile/1
-Content-Type: :application/json
+Content-Type: application/json
 
 {
     "full_name":"Nguyen huu phu",
