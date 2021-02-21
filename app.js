@@ -72,6 +72,8 @@ var app = express();
 // view engine setup
 
 var whitelist = ['http://localhost:3000','https://api-dariu.web.app',"https://do-an-dariu.herokuapp.com", 'https://project-dariu.herokuapp.com','http://localhost:8001','https://do-an-nho-nho.herokuapp.com','http://localhost:4001','http://localhost:3001']
+// var whitelist = ['*']
+
 var corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {

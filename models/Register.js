@@ -16,7 +16,8 @@ Register.init({
     resert:DataTypes.STRING,
     phone_number:DataTypes.STRING,
     become_a_part_of_us:DataTypes.NUMBER,
-    created_at:DataTypes.DATE
+    created_at:DataTypes.DATE,
+    description:DataTypes.STRING
   
 }, { 
     sequelize, 

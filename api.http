@@ -162,11 +162,13 @@ Content-Type: application/json
     "username":"huuphu" ,
     "passwd":"123456" ,
     "full_user":"Nguyen Huu Phu",
-    "date_of_birth":"2021-10-28",
-    "address":"Hoai Nhon , Binh Dinh",
+   
+   
     "email":"nhpsdsfdsdawfdf1@gmail.com",
-    "phone_number":"0369202024"
+    "phone_number":"0369202024",
+    "termAndConditions": true
 }
+
 
 #######################
 

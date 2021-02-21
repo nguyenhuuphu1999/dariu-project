@@ -9,7 +9,7 @@ const RegisterAccountForOwn = require('../../../models/RegisterAccountForOwn');
 const { request } = require('express');
 const Token = require('../../../models/Token');
 router.post('/', async (req,res) => {
-
+    console.log(req.body)
     var flagCheckEmail = true;
     console.log(req.query.type)
     if(req.query.type == "user"){
@@ -40,7 +40,7 @@ router.post('/', async (req,res) => {
                 phone_number:req.body.phone_number,
                 become_a_part_of_us:0,
                 created_at:Date.now(),
-              
+                description:''
             })
 
            
