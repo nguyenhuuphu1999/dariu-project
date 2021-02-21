@@ -19,16 +19,7 @@ router.get('/:idTypeHouse/typeApartment', async (req,res) => {
 
         }]
         })
-    //     const typeApartment = await Apartment.findAll({ 
-    //         where:{
-    //             id_type_house:req.query.idTypeHouse
-    //         },
-    //         limit:8
-    //     });
-
-    // const diaDiemNoiBat = await DiaDiemNoiBat.findAll({
-
-    //     })
+   
 
   res.json({ 
     typeApartment

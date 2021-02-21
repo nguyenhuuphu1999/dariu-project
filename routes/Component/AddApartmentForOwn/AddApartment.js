@@ -9,6 +9,37 @@ const ApartmentPhoto = require('../../../models/ApartmentPhoto')
 const ApartmentPhotos = require('../../../models/ApartmentPhotos')
 const ApartmentDetail = require('../../../models/ApartmentDetail')
 const ApartmentCheckBookings = require('../../../models/ApartmentCheckBookings')
+const TypeHouse = require('../../../models/TypeHouse')
+const City = require('../../../models/City')
+const User = require('../../../models/User')
+router.get('/',async(req,res)=>{
+    const resultApartment =await Apartment.findAll(
+        {
+            include:[{
+                model:TypeHouse,
+                as:'typeHouse',
+                attributes:["title"]
+            },{
+                model:City,
+                as:'City',
+                attributes:['name_city']
+            },{
+                model:User,
+                as:'User',
+                attributes:['full_name']
+            }],
+            
+            
+
+        }
+    )
+
+    res.json({
+        message:"Get data sucessfully",
+        data:resultApartment,
+        err:false
+    })
+})
 
 router.get('/:id',async(req,res)=>{
     console.log(req.query.limit)

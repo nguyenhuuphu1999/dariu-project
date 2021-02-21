@@ -37,7 +37,7 @@ GET  http://localhost:3000/apartment/detail?id=10
 
 
 ######################3 apartment_detail
-GET  http://localhost:3000/apartment/detail/comment?id=10
+GET  http://localhost:4001/apartment/detail/comment?id=10
 
 
 ######################3 Dang_ky ok 
@@ -241,7 +241,8 @@ Content-Type: application/json
 
 GET http://localhost:4001/apartment/1?page=5
 
-
+############################
+GET  http://localhost:4001/apartment/
 ####################
 PUT    http://localhost:4001/apartment/160
 Content-Type: application/json

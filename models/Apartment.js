@@ -1,6 +1,9 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const sequelize = require('./sequelize');
 
+const TypeHouse = require('./TypeHouse')
+const City = require('./City')
+const User = require('./User')
 class Apartment extends Model {}
 
 Apartment.init({
@@ -22,5 +25,31 @@ Apartment.init({
     timestamps: false
 });
 
+TypeHouse.hasMany(Apartment,{
+    foreignKey:'id'
+})
+
+Apartment.belongsTo(TypeHouse,{
+    as:'typeHouse',
+    foreignKey:'id_type_house'
+})
+
+City.hasMany(Apartment,{
+    foreignKey:'id'
+})
+
+Apartment.belongsTo(City,{
+    as:'City',
+    foreignKey:'id_city'
+})
+
+User.hasMany(Apartment,{
+    foreignKey:'id'
+})
+
+Apartment.belongsTo(User,{
+    as:'User',
+    foreignKey:'id_user_own'
+})
 
 module.exports = Apartment
