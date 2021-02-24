@@ -58,3 +58,6 @@ paths:
   
   /typeHouse:
     $ref: Path/TypeHouse.yaml
+
+  /login/user:
+    $ref: Path/Login.yaml

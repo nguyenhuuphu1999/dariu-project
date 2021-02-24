@@ -14,7 +14,7 @@ router.post('/user',async(req,res)=>{
         }
     })
 
-    
+    console.log(result)
 
     if(result !=null){
         const data = {
@@ -37,7 +37,7 @@ router.post('/user',async(req,res)=>{
             })
         }
             res.json({
-                id:result.id,
+                Data:result,
                 access_token:token,
                 err:false
             })
