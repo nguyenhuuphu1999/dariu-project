@@ -19,11 +19,13 @@ router.post('/checkBooking', async (req,res) => {
         if(CheckBooking == ''){
             console.log("CheckBooking true")
             res.json({
-                message:"Bạn có thế booking phòng vào ngày này"
+                message:"Bạn có thế booking phòng vào ngày này",
+                status:true
             })
         }else{
             res.json({
-                message:"Xin lỗi ngày này , phòng này đã có người booking"
+                message:"Xin lỗi ngày này , phòng này đã có người booking",
+                status:false
             })
         }
        

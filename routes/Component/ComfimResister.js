@@ -7,7 +7,7 @@ const { findOne } = require('../../models/RegisterAccountForOwn');
 const RegisterAccountForOwn = require('../../models/RegisterAccountForOwn');
 router.post('/user', async (req,res) => {
 
-    console.log(req.body)
+    console.log(req.body)   
     var flagCheckKeyRegister = true;
     const checkCode = await RegisterAccountForOwn.findOne({
         where:{
