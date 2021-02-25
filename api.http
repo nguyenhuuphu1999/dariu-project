@@ -108,7 +108,7 @@ Content-Type: application/json
 {
     "id_apartment":21,
     "check_in": "2021-1-21",
-    "check_out": "2021-1-30"
+    "check_out": "2021-7-30"
 }
 
 ####################### list booking (edit)
