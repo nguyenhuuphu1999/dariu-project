@@ -193,6 +193,26 @@ router.get('/:id/detail', async (req,res) => {
 
 });
 
+router.get("/:id", async(req,res)=>{
+    console.log(req.query.type)
+    const  result_apartment = await Apartment.findAll({
+        where:{
+            id:req.params.id
+        },
+        include:{
+            model:ApartmentPhotos,
+            as:'apartment_images',
+
+        }
+    })
+
+    res.json({
+        data:result_apartment,
+        err:false,
+        mess:"Lay data thnah cong "
+    })
+})
+
 
 
 module.exports = router;

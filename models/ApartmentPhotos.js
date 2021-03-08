@@ -5,6 +5,10 @@ const sequelize = require('./sequelize');
 class ApartmentPhotos extends Model {}
 
 ApartmentPhotos.init({
+    id:{
+      type:DataTypes.NUMBER,
+      primaryKey:true
+    },
     id_partment : DataTypes.NUMBER,
     url_image: DataTypes.STRING
 }, { 
@@ -14,13 +18,11 @@ ApartmentPhotos.init({
     timestamps: false
 });
 
-ApartmentPhotos.hasMany(Apartment,{
-    foreignKey:'id'
-  })
+ApartmentPhotos.belongsTo(Apartment, { foreignKey: 'id_partment'})
   
-  Apartment.belongsTo(ApartmentPhotos,{
-    as:'apartment_images',
-    foreignKey:'id'
-  })
+Apartment.hasMany(ApartmentPhotos,{
+  as:'apartment_images',
+  foreignKey:'id_partment'
+})
 
 module.exports = ApartmentPhotos

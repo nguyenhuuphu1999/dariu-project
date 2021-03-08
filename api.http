@@ -107,8 +107,8 @@ Content-Type: application/json
 
 {
     "id_apartment":21,
-    "check_in": "2021-1-21",
-    "check_out": "2021-7-30"
+    "check_in": "2021-01-21 00:00:00",
+    "check_out": "2021-01-24 00:00:00"
 }
 
 ####################### list booking (edit)
@@ -215,6 +215,21 @@ Content-Type: multipart/form-data
 POST   http://localhost:4001/uploadImageOwn/avatar
 Content-Type: multipart/form-data
 
+
+#######################(28-1-2021)(bo)
+
+PUT   http://localhost:4001/uploadImageOwn/avatar
+Content-Type: multipart/form-data
+
+#######################(28-1-2021)(bo)
+
+PUT   http://localhost:4001/apartment/9
+Content-Type: application/json
+
+{
+    "apartment_name": "req.body.apartment_name"
+}
+
 #######################(28-1-2021) multiple(bo)
 
 POST   http://localhost:4001/UploadMultiple/multiple
@@ -229,17 +244,18 @@ Content-Type: application/json
 {
     "id_district":1,
     "id_city":null,
-    
+    "id_number_rooms":2,
     "id_type_house":1,
     "apartment_name": "",
     "price": null,
     "ratings" :null,
     "id_user_own":1,
-    "image_url":""
+    "image_url":"",
+    "provincial":"Ho Chi Minh"
 }
 #######################(28-1-2021)
 
-GET http://localhost:4001/apartment/1?page=5
+GET http://localhost:4001/apartment/1
 
 ############################
 GET  http://localhost:4001/apartment/
@@ -258,7 +274,10 @@ Content-Type: application/json
     "image_url":""
 }
 ####################3
-DELETE  http://localhost:4001/apartment/10
+DELETE  http://localhost:4001/apartment/
+
+####################3
+GET  http://localhost:4001/apartments/9?type="own"
 
 #######################(28-1-2021)(fix)
 
@@ -297,7 +316,7 @@ Content-Type: application/json
 
 POST   http://localhost:4001/login/user
 Content-Type: application/json
-Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ0ZW4iOiJwaHUiLCJobyI6Im5ndXllbiIsImlhdCI6MTYxMzI5MDc3NCwiZXhwIjoxNjEzMzAxNTc0fQ.H8Glyd6F4LHKADjr3zAm5I5qtMxgyPKW3PW-3cvUhkCfJlm0Q0nl9zmgHHyh26u8sCSsMs_YmVblg7oJwbl5ZA
+Authorization: Basic eyJhbGciOiiIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiJQaMO6IE5ndXnhu4VuIiwiZW1haWwiOiJuaHAyMTMyQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjEzMzAwNjMzLCJleHAiOjE2MTMzMDQyMzN9.RJcmh_GeEH1Hq6RY9wJCFdAGe8x60RCRcZzpQbQs2pw3jBSiQj47nEh9nMoLYhbmW0u0glYKJ3KvmTdYZqi-iQ
 
 {
     "email": "nhp2132@gmail.com",

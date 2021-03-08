@@ -1,37 +1,73 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-var cloudinary = require('cloudinary').v2;
-const multer = require('multer');
+var cloudinary = require("cloudinary").v2;
+const multer = require("multer");
 const path = require("path");
-var fs = require('fs');
-const MethodUploadFile = require('../../Component/UpdateImage/MethodUploadFile.js')
-const  upload = multer({
-    dest: path.join(__dirname, "../../../public/images")
-})
+var fs = require("fs");
+const MethodUploadFile = require("../../Component/UpdateImage/MethodUploadFile.js");
+const upload = multer({
+  dest: path.join(__dirname, "../../../public/images"),
+});
+const ApartmentPhotos = require("../../../models/ApartmentPhotos");
 
-router.post('/avatar',upload.single("upload_file_input"), async (req,res,next)=>{
+router.post(
+  "/avatar",
+  upload.single("upload_file_input"),
+  async (req, res, next) => {
+    const temp = req.body.data.data;
+    console.log(req.body.data.id_apartment);
+    const uploadResponse = await cloudinary.uploader.upload(temp, {
+      upload_preset: "dev_setups",
+    });
+    console.log(uploadResponse.url);
 
-    // console.log(req.file.path)
-    var temPath = req.file.path;
-    // console.log("dong 1" + temPath)
-    // var pathSave = path.join(__dirname,'../../../public/images/image.jpg')
-    // // const fileGettingUploaded = path.join(__dirname, "../../../public/images/Screenshot.png");
+    const result = await ApartmentPhotos.create({
+      id_partment: req.body.data.id_apartment,
+      url_image: uploadResponse.url,
+    });
 
-  const result = await  MethodUploadFile.MethodUploadFile(res,temPath);
-    console.log(result)
-    // cloudinary.uploader.upload('image.jpg')
-   
+    if (result != null) {
+      res.json({
+        message: "upload succefull",
+        data: result,
+      });
+    } else {
+      res.status(500).json({
+        message: "upload image fail.",
+      });
+    }
+  }
+);
 
-    // console.log("dong 2" +pathSave)
-    // try{
-    //     fs.renameSync(temPath,pathSave);
-    // }
-    // catch(err){
-    //     console.log(err);
-    // }
-    
-    // res.json('senfile succsessfull' + pathSave);
- 
-})
+router.put("/avatar", async (req, res) => {
+  console.log("body" + req.body.data.id);
+  const temp = req.body.data.data;
+  const uploadResponse = await cloudinary.uploader.upload(temp, {
+    upload_preset: "dev_setups",
+  });
+  console.log(uploadResponse.url);
+
+  const result = await ApartmentPhotos.update(
+    {
+      url_image: uploadResponse.url,
+    },
+    {
+      where: {
+        id: req.body.data.id,
+      },
+    }
+  );
+
+  if (result != null) {
+    res.json({
+      message: "upload succefull",
+      data: result,
+    });
+  } else {
+    res.status(500).json({
+      message: "upload image fail.",
+    });
+  }
+});
 
 module.exports = router;

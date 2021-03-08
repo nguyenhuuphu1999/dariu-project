@@ -14,10 +14,11 @@ Apartment.init({
     apartment_name: DataTypes.STRING,
     price: DataTypes.NUMBER,
     ratings :DataTypes.NUMBER,
-    image_url:DataTypes.STRING,
+    image_url:DataTypes.STRING,// image_url: Sequelize.VIRTUAL
     id_user_own:DataTypes.STRING,
     note_apartment:DataTypes.STRING,
-
+    provincial:DataTypes.STRING,
+    image: Sequelize.VIRTUAL
 }, { 
     sequelize, 
     modelName: 'Apartment',
