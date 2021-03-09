@@ -255,7 +255,7 @@ Content-Type: application/json
 }
 #######################(28-1-2021)
 
-GET http://localhost:4001/apartment/1
+GET http://localhost:4001/apartment/1?limit=2
 
 ############################
 GET  http://localhost:4001/apartment/

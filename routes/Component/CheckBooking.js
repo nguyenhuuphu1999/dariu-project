@@ -69,12 +69,12 @@ router.post("/checkBooking", async (req, res) => {
      
       res.json({
         message: "Bạn có thế booking phòng vào ngày này",
-        err: true,
+        err: false,
       });
     } else {
       res.json({
         message: "Xin lỗi ngày này , phòng này đã có người booking",
-        err: false,
+        err: true,
       });
     }
   }

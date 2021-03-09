@@ -54,6 +54,8 @@ router.get("/:id", async (req, res) => {
           model: ApartmentPhotos,
           as: 'apartment_images',
           attributes:['url_image']
+       
+          
       },
       limit: 2,
       order: [["id", "DESC"]],
