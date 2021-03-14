@@ -34,14 +34,6 @@ router.post("/checkBooking", async (req, res) => {
       },
     });
 
-    // if (CheckBooking == "") {
-    //   const CheckBooking = await CheckBookings.create({
-    //     id_apartment: req.body.id_apartment,
-    //     id_user_booking: req.body.id_user_booking,
-    //     check_in: req.body.check_in,
-    //     check_out: req.body.check_out,
-    //   });
-    // }
 
     if (CheckBooking == "") {
       res.json({
@@ -54,6 +46,11 @@ router.post("/checkBooking", async (req, res) => {
         err: true,
       });
     }
+  }else{
+    res.json({
+      message: "Bạn có thế booking phòng vào ngày này",
+      err: false,
+    });
   }
 });
 
