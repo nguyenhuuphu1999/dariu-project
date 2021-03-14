@@ -8,7 +8,7 @@ ApartmentCheckBookings.init({
     id_apartment:DataTypes.STRING,
     check_in:DataTypes.DATE,
     check_out: DataTypes.DATEONLY,
- 
+    id_user_booking:DataTypes.NUMBER
    
 }, { 
     sequelize, 

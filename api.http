@@ -113,9 +113,20 @@ POST  http://localhost:4001/apartments/checkBooking
 Content-Type: application/json
 
 {
-    "id_apartment":21,
-    "check_in": "2021-03-10",
-    "check_out": "2021-03-15"
+    "id_apartment":22,
+    "check_in": "2021-03-14",
+    "check_out": "2021-03-14"
+}
+#######################(bo)
+
+POST  http://localhost:4001/apartments/booking
+Content-Type: application/json
+
+{
+    "check_in": "2021-03-14",
+    "check_out": "2021-03-14",
+    "id_apartment": 22,
+    "id_user_booking": 1
 }
 #######################(bo)
 
@@ -260,9 +271,9 @@ Content-Type: application/json
     "image_url":"",
     "provincial":"Ho Chi Minh"
 }
-#######################(28-1-2021)
+#######################(28-1-2021)//limit
 
-GET http://localhost:4001/apartment/1?page=2
+GET http://localhost:4001/apartment/1?limit=2
 
 ############################
 GET  http://localhost:4001/apartment/
@@ -323,7 +334,7 @@ Content-Type: application/json
 
 POST   http://localhost:4001/login/login_user?type=own
 Content-Type: application/json
-Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiJIb8OgbmcgTWluaCBI4bqjaSIsImVtYWlsIjoiaG9hbmdtaW5oaGFpQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjE1NDg2OTY0LCJleHAiOjE2MTU0OTA1NjR9.6yjXHG-mMF2cv6xVzTfnl8F5ePx-MOmjVLtG6yffalKfWMR-HW4zZyWKn4A2IGPlqjGihl2GnbseJYTwVHMQvg
+Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiJOZ3V54buFbiBI4buvdSBQaMO6IiwiZW1haWwiOiJuaHAyMTMyQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjE1NzQ2OTcwLCJleHAiOjE2MTU3NTA1NzB9.esgqygtyN8gDwvWlyjfP0vL1pJq1ikHtBj-pz7UNqqzjv9EL25fVQ7FotvzOOG0L61TGVsoL3UGmYjUkrPGXug
 
 
 

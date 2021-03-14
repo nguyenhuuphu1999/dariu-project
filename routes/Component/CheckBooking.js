@@ -29,6 +29,11 @@ router.post("/checkBooking", async (req, res) => {
             check_out: {
               [Op.between]: [req.body.check_in, req.body.check_out],
             },
+          },
+          {
+            check_in:{
+              [Op.gte]:req.body.check_in
+            }
           }
         ],
       },
@@ -69,6 +74,25 @@ router.get("/:id/checkBooking", async (req, res) => {
     data: result,
     err: false,
   });
+});
+
+router.post("/booking", async (req, res) => {
+  console.log(req.body)
+  const result = await CheckBookings.create({
+    check_in: req.body.check_in,
+    check_out: req.body.check_out,
+    id_apartment: req.body.id_apartment,
+    id_user_booking: req.body.id_user_booking
+  });
+ 
+  
+
+  res.json({
+    message: "ban da dat phong thanh cong ",
+    data: result,
+    err: false,
+  });
+  
 });
 
 module.exports = router;
