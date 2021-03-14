@@ -11,7 +11,9 @@ Token.init({
     },
     id_user:DataTypes.NUMBER,
     token:DataTypes.STRING,
-    expiration:DataTypes.STRING
+    expiration:DataTypes.STRING,
+    type:DataTypes.STRING,
+    create_date:DataTypes.DATE
 },{
     sequelize,
     modelName:'Token',

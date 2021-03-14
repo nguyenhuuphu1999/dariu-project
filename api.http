@@ -87,13 +87,20 @@ GET  http://localhost:3000/cho_o_gan_ban
 ###ok
 
 GET  http://localhost:4001/home
+###ok
 
-################ok
-GET  http://localhost:4001/apartments/city/2/apartment?type=hotels
+GET  http://localhost:4001/apartments/hotels
+###ok
 
-#######################ok
+GET  http://localhost:4001/apartments/cho-o-rieng
 
-GET  http://localhost:4001/apartments/1/typeApartment
+
+################ok // edit
+GET  http://localhost:4001/apartments/city/2/apartment
+
+#######################ok âprtment
+
+GET  http://localhost:4001/apartments/1/typeApartment?page=1
 
 #######################ok
 
@@ -107,10 +114,12 @@ Content-Type: application/json
 
 {
     "id_apartment":21,
-    "check_in": "2021-01-21 00:00:00",
-    "check_out": "2021-01-24 00:00:00"
+    "check_in": "2021-03-10",
+    "check_out": "2021-03-15"
 }
+#######################(bo)
 
+GET  http://localhost:4001/apartments/21/checkBooking
 ####################### list booking (edit)
 
 GET  http://localhost:4001/apartments/11/bookings
@@ -139,17 +148,15 @@ Content-Type: application/json
 
 ########################### 2021-01-23 (next)(fix)
 
-POST http://localhost:4001/register/?type=users
+POST http://localhost:4001/register/?type=own
 Content-Type: application/json
 
     {
         "username":"huuphu" ,
-        "passwd":"123456" ,
         "full_name":"Nguyen Huu Phu",
-        "date_of_birth":"2021-10-28",
-        "address":"Hoai Nhon , Binh Dinh",
-        "email":"dfdfdfdf@gmail.com",
-        "phone_number":"0369202024"
+        "passwd":"123456" ,
+        "phone_number":"0369202024",
+        "email":"dsdsdsdsadaxc@gmial.com"
     }
 
 
@@ -161,8 +168,8 @@ Content-Type: application/json
 {
     "username":"huuphu" ,
     "passwd":"123456" ,
-   
-    "email":"nhpdawfdf1@gmail.com",
+    "fullname":"Nguyen Huu Phu",
+    "email":"nhphjsdssdhgf @gmail.com",
     "phone_number":"0369202024",
     "termAndConditions": true
 }
@@ -255,7 +262,7 @@ Content-Type: application/json
 }
 #######################(28-1-2021)
 
-GET http://localhost:4001/apartment/1?limit=2
+GET http://localhost:4001/apartment/1?page=2
 
 ############################
 GET  http://localhost:4001/apartment/
@@ -314,14 +321,10 @@ Content-Type: application/json
 
 #######################Room
 
-POST   http://localhost:4001/login/user
+POST   http://localhost:4001/login/login_user?type=own
 Content-Type: application/json
-Authorization: Basic eyJhbGciOiiIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiJQaMO6IE5ndXnhu4VuIiwiZW1haWwiOiJuaHAyMTMyQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjEzMzAwNjMzLCJleHAiOjE2MTMzMDQyMzN9.RJcmh_GeEH1Hq6RY9wJCFdAGe8x60RCRcZzpQbQs2pw3jBSiQj47nEh9nMoLYhbmW0u0glYKJ3KvmTdYZqi-iQ
+Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiJIb8OgbmcgTWluaCBI4bqjaSIsImVtYWlsIjoiaG9hbmdtaW5oaGFpQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjE1NDg2OTY0LCJleHAiOjE2MTU0OTA1NjR9.6yjXHG-mMF2cv6xVzTfnl8F5ePx-MOmjVLtG6yffalKfWMR-HW4zZyWKn4A2IGPlqjGihl2GnbseJYTwVHMQvg
 
-{
-    "email": "nhp2132@gmail.com",
-    "passwd":"123456"
-}
 
 
 ##################

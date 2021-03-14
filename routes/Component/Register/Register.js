@@ -8,6 +8,7 @@ const Register = require('../../../models/Register');
 const RegisterAccountForOwn = require('../../../models/RegisterAccountForOwn');
 const { request } = require('express');
 const Token = require('../../../models/Token');
+const User_own = require('../../../models/User_own');
 router.post('/', async (req,res) => {
     console.log(req.body)
     var flagCheckEmail = true;
@@ -24,9 +25,9 @@ router.post('/', async (req,res) => {
             name: req.body.username,
             email: req.body.email,
           }
-        var token = jwt.sign({data:userData},req.body.username,{algorithm:'HS512',expiresIn:'3h' })
+       
 
-        if(checkEmail == null){
+        if(checkEmail == null){ /// dang ky user thuong
             const register = await Register.create({
                 username:req.body.username,
                 passwd:req.body.passwd,
@@ -45,20 +46,41 @@ router.post('/', async (req,res) => {
 
            
 
-            const result_token  = await Token.create({
-                id_user:register.id,
-                token:token,
-                expiration:'3h'
-            }) 
+            const data = { // data tao token
+                Fullname: req.body.full_name,
+                email: req.body.email,
+              };
+              const token = jwt.sign(//  tao token
+                { data: { data } },
+                process.env.KEYTOKEN + "_" + req.body.email,
+                { algorithm: "HS512", expiresIn: "1h" }
+              );
+             
+              const resultAddToken = await Token.create({ // save token cho user thuong moi dang ky
+                id_user: register.id,
+                token: token,
+                create_date: new Date()
+                  .toISOString()
+                  .split(".")[0]
+                  .replace(/T/, " "),
+                type: "nguoi dung",
+                expiration: new Date(
+                  new Date().getTime() + 30 * 24 * 60 * 60 * 1000
+                )
+                  .toISOString()
+                  .split(".")[0]
+                  .replace(/T/, " "),
+              });
+        
             res.json({ 
-                message:"Register successfull",
-                register:register,result_token,
+                message:"Register user thuong successfull",
+                register:register,resultAddToken,
                 error:false
             });
-        }else{
+        }else if(req.query.type == "user"){ // dang ky cho user chu nha
             
             res.json({ 
-                message:"Register fail , please check your email . ",
+                message:"Register use thuong fail , please check your email . ",
                 error:true
             });
         }
@@ -66,57 +88,80 @@ router.post('/', async (req,res) => {
        
     }else{
 
-        const checkEmail = await RegisterAccountForOwn.findOne({
+        const checkEmail = await User_own.findOne({
             where:{
                 email:req.body.email
             }
         })
         console.log(checkEmail)
         if(checkEmail == null){
-        const random =  Math.floor(Math.random() * 1000000);
+        // const random =  Math.floor(Math.random() * 1000000);
 
-        const email= req.body.email;
-        const title = "Ma Xac Nhan";
-        const content = '<h1 style="color: red">Welcome you to Go</h1><p> </p>Your confirmation code is: '+random+'</p> <div> <i>Please enter the above confirmation code to login to your account !</i> </div>';
+        // const email= req.body.email;
+        // const title = "Ma Xac Nhan";
+        // const content = '<h1 style="color: red">Welcome you to Go</h1><p> </p>Your confirmation code is: '+random+'</p> <div> <i>Please enter the above confirmation code to login to your account !</i> </div>';
     
-        const transporter = mailer.transporter();
-        const mailOptions = mailer.mailOptions(email,title,content)
+        // const transporter = mailer.transporter();
+        // const mailOptions = mailer.mailOptions(email,title,content)
     
-        transporter.sendMail(mailOptions, (error, info) => {
-            // if (error) {
-            //     res.json({
-            //         error
-            //     })
-            // }
-    
-        });
+        // transporter.sendMail(mailOptions, (error, info) => {
+         
+        // });
 
 
-        const register = await RegisterAccountForOwn.create({
-            username :req.body.username,
-            id_type_user :4,
-            full_name :req.body.full_name,
-            avatar :null,
-            resert:0,
-            key_register:random,
+        const register = await User_own.create({
+            username:req.body.username,
+            id_type_user:4,
+            full_name:req.body.full_name,
+            passwd: req.body.passwd,
             phone_number:req.body.phone_number,
-            email:req.body.email,
-            created_at:Date.now(),
-            status:0 ,
-            language:"",
-            about:"",
-            avartar:""
+            email:req.body.email	,
+            about:'',
+            created_at:new Date()
+            .toISOString()
+            .split(".")[0]
+            .replace(/T/, " "),
+            avartar:'',
+            status:1
         })
-    
+
+        const data = { // data tao token
+            Fullname: req.body.full_name,
+            email: req.body.email,
+          };
+          const token = jwt.sign(//  tao token
+            { data: { data } },
+            process.env.KEYTOKEN + "_" + req.body.email,
+            { algorithm: "HS512", expiresIn: "1h" }
+          );
+         
+          const resultAddToken =await Token.create({ // save token cho user thuong moi dang ky
+            id_user: register.id,
+            token: token,
+            create_date: new Date()
+              .toISOString()
+              .split(".")[0]
+              .replace(/T/, " "),
+            type: "chu nha",
+            expiration: new Date(
+              new Date().getTime() + 30 * 24 * 60 * 60 * 1000
+            )
+              .toISOString()
+              .split(".")[0]
+              .replace(/T/, " "),
+          })
+    console.log(resultAddToken)
+          
+
         res.json({ 
-            message:"Register successfull",
-            register:register,
+            message:"Register user chu nha successfull",
+            register:register,resultAddToken,
             error:false
         });
     }else{
             
         res.json({ 
-            message:"Register fail , please check your email . ",
+            message:"Register user chu nha fail , please check your email . ",
             error:true
 
         });

@@ -12,8 +12,8 @@ const ApartmentPhotos = require("../../../models/ApartmentPhotos");
 
 router.post(
   "/avatar",
-  upload.single("upload_file_input"),
   async (req, res, next) => {
+    console.log(req.body)
     const temp = req.body.data.data;
     console.log(req.body.data.id_apartment);
     const uploadResponse = await cloudinary.uploader.upload(temp, {

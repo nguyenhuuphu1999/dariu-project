@@ -6,6 +6,7 @@ const Apartment = require('../../models/Apartment');
 const DiaDiemNoiBat = require('../../models/DiaDiemNoiBat');
 const Comment = require('../../models/ApartmentComment');
 const User = require('../../models/User');
+const ApartmentPhotos = require('../../models/ApartmentPhotos');
 
 
 router.get('/', async (req,res) => {
@@ -16,7 +17,13 @@ router.get('/', async (req,res) => {
   
   const apartment = await Apartment.findAll({
     where:{id_city:1 },
-    limit:8
+    limit:8,
+    include: {
+      model: ApartmentPhotos,
+      as: "apartment_images",
+      attributes: ["url_image"],
+    },
+    order: [["id", "DESC"]],
   });
   const diaDiemNoiBat = await DiaDiemNoiBat.findAll({
 
@@ -29,11 +36,7 @@ router.get('/', async (req,res) => {
         [Op.gte]:5
       }
     },
-    // include:[{
-    //   model:User,
-    //   as:'user',
-    //   attributes: ['address']
-    // }]
+   
   })
 
   res.json({ 

@@ -1,4 +1,5 @@
-const { Sequelize,Model,DataTypes} = require('sequelize')
+const { Sequelize,Model,DataTypes} = require('sequelize');
+const Promotion = require('./Promotion');
 const sequelize = require('./sequelize');
 
 class City extends Model{}
@@ -21,5 +22,13 @@ City.init({
     timestamps:false
 
 });
+City.hasOne(Promotion,{
+    foreignKey:'id_city'
+})
+
+Promotion.belongsTo(City,{
+    as:'city',
+    foreignKey:'id_city'
+})
 
 module.exports = City;
