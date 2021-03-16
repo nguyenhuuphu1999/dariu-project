@@ -27,7 +27,7 @@ Apartment.init({
 });
 
 TypeHouse.hasMany(Apartment,{
-    foreignKey:'id'
+    foreignKey:'id_type_house'
 })
 
 Apartment.belongsTo(TypeHouse,{

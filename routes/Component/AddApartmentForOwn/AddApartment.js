@@ -64,8 +64,34 @@ router.get("/:id", async (req, res) => {
       data: result,
       message: "get apartment successfully",
     });
+  }else if(req.query.limit == "all"){
+    console.log("limit all")
+    const result = await Apartment.findAll({
+      where: {
+        id_user_own: req.params.id,
+      },
+      include:[ {
+         
+          model: ApartmentPhotos,
+          as: 'apartment_images',
+          attributes:['url_image'],
+      },{
+        model:TypeHouse,
+        as:'typeHouse',
+        attributes:['title'],
+
+      }],order: [["id", "DESC"]],
+    });
+
+  
+    
+    res.json({
+      data: result,
+      message: "get apartment successfully",
+    });
+    }
    
-  } else {
+   else {
     const result = await Apartment.findAll({
       where: {
         id_user_own: req.params.id,

@@ -276,6 +276,9 @@ Content-Type: application/json
 GET http://localhost:4001/apartment/1?limit=2
 
 ############################
+GET  http://localhost:4001/apartment/1/?limit=all
+
+###3
 GET  http://localhost:4001/apartment/
 ####################
 PUT    http://localhost:4001/apartment/160
