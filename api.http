@@ -128,6 +128,14 @@ Content-Type: application/json
     "id_apartment": 22,
     "id_user_booking": 1
 }
+####
+POST  http://localhost:4001/apartments/lich_su_dat_phong
+Content-Type: application/json
+
+{
+    "data":["100","200","199"]
+}
+
 #######################(bo)
 
 GET  http://localhost:4001/apartments/21/checkBooking
@@ -179,10 +187,9 @@ Content-Type: application/json
 {
     "username":"huuphu" ,
     "passwd":"123456" ,
-    "fullname":"Nguyen Huu Phu",
-    "email":"nhphjsdssdhgf @gmail.com",
-    "phone_number":"0369202024",
-    "termAndConditions": true
+    "full_name":"Nguyen Huu Phu",
+    "email":"nhphjsdsdgf@gmail.com",
+    "phone_number":"0369202024"  
 }
 
 
@@ -335,9 +342,9 @@ Content-Type: application/json
 
 #######################Room
 
-POST   http://localhost:4001/login/login_user?type=own
+POST   http://localhost:4001/login/login_user?type=user
 Content-Type: application/json
-Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiRnVsbG5hbWUiOiJOZ3V54buFbiBI4buvdSBQaMO6IiwiZW1haWwiOiJuaHAyMTMyQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjE1NzQ2OTcwLCJleHAiOjE2MTU3NTA1NzB9.esgqygtyN8gDwvWlyjfP0vL1pJq1ikHtBj-pz7UNqqzjv9EL25fVQ7FotvzOOG0L61TGVsoL3UGmYjUkrPGXug
+Authorization: Basic eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImRhdGEiOnsiZW1haWwiOiJuaHAyMTMyQGdtYWlsLmNvbSJ9fSwiaWF0IjoxNjE1NTEyNzI2LCJleHAiOjE2MTU1MTYzMjZ9.bBn34FKPYSMbMiDjkP9aU7uRzJMc6Xe4Sw9LuZpxBgTy7zXcNjHyLUCsi3UIv2htBqLThGAqrh5RCStj4dfbmA
 
 
 
@@ -354,6 +361,30 @@ Content-Type: application/json
 }
 
 ##################
-GET  http://localhost:4001/profile/1
+GET  http://localhost:4001/profile/79
 
+###
 
+GET  http://localhost:4001/apartments/city/9/apartment?type=tret
+
+###
+
+POST   http://localhost:4001/apartments/lich_su_dat_hang
+Content-Type: application/json
+
+{
+    "check_in": "2021-03-19",
+    "check_out": "2021-03-19",
+    "id_user": "79",
+    "image": "https://a0.muscache.com/im/pictures/42eef29b-9f1f-4dd1-ad06-a3549b36fc80.jpg?im_w=720",
+    "name_apartment": "Apartment with Bathtub ★ Free Beach ★Pool★Scooter",
+    "so_ngay": 1,
+    "so_tien": 11,
+    "tong_tien": 11
+}
+
+#####
+GET    http://localhost:4001/apartments/lich_su_dat_hang/79
+
+#####
+GET    http://localhost:4001/apartments/lich_su_dat_hang/35/detail

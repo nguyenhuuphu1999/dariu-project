@@ -45,7 +45,8 @@ router.use(function async(req, res, next) {
                 });
                 next();
               }
-        }else{ // kt user login la chu nha
+        }
+        else{ // kt user login la chu nha
             if (result.type == 'chu nha') {
                 const result_info_user = User_own.findOne({
                   where: {

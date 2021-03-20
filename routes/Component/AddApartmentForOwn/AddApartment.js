@@ -132,6 +132,7 @@ router.post("/", async (req, res) => {
     id_user_own: req.body.id_user_own,
     id_number_rooms: req.body.id_number_rooms,
   });
+  console.log(addPartment)
   res.json({
     message: "Tao phong thanh cong",
     data: addPartment,

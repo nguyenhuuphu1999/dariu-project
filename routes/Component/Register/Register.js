@@ -9,6 +9,7 @@ const RegisterAccountForOwn = require('../../../models/RegisterAccountForOwn');
 const { request } = require('express');
 const Token = require('../../../models/Token');
 const User_own = require('../../../models/User_own');
+
 router.post('/', async (req,res) => {
     console.log(req.body)
     var flagCheckEmail = true;
