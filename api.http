@@ -92,7 +92,8 @@ GET  http://localhost:4001/home
 GET  http://localhost:4001/apartments/hotels
 ###ok
 
-GET  http://localhost:4001/apartments/cho-o-rieng
+GET  http://localhost:4001/apartments/cho-o-rieng/?page=1
+
 
 
 ################ok // edit
@@ -188,7 +189,7 @@ Content-Type: application/json
     "username":"huuphu" ,
     "passwd":"123456" ,
     "full_name":"Nguyen Huu Phu",
-    "email":"nhphjsdsdgf@gmail.com",
+    "email":"nhp2132@gmail.com",
     "phone_number":"0369202024"  
 }
 

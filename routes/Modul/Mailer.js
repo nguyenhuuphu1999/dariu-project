@@ -24,6 +24,7 @@ function mailOptions(email,title,content){
         html: content
     };
     return mailOptions
+    console.log('Ban da send main thnah cong ')
 }
 
 module.exports.transporter=transporter;

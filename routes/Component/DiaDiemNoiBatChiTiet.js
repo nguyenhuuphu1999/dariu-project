@@ -271,7 +271,7 @@ router.get("/cho-o-rieng", async (req, res) => {
   var perpage = 8;
   var start = (page - 1) * perpage;
   var end = page * perpage;
-
+  console.log(result.length/8)
   res.json({
     datalength: Math.ceil(result.length / 8),
     data: result.slice(start, end),
