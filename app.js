@@ -144,7 +144,6 @@ app.use('/comfimRegister',comfimRegister);
 app.use('/users',UpdateProfileOwn);
 app.use('/uploadImageOwn',UploadImageOwn);
 app.use('/UploadMultiple',UploadMultiple);
-
 app.use('/apartment',AddApartment);
 app.use('/apartment',UpdateApartment);
 app.use('/city',City);

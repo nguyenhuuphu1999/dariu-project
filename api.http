@@ -91,9 +91,8 @@ GET  http://localhost:4001/home
 
 GET  http://localhost:4001/apartments/hotels
 ###ok
-
-GET  http://localhost:4001/apartments/cho-o-rieng/?page=1
-
+http://localhost:4001/apartments/hotels?cho-o-rieng/?page=3
+GET  http://localhost:4001/apartments/cho-o-rieng/?page=5
 
 
 ################ok // edit
@@ -275,10 +274,12 @@ Content-Type: application/json
     "apartment_name": "",
     "price": null,
     "ratings" :null,
-    "id_user_own":1,
+    "id_user_own":107,
     "image_url":"",
     "provincial":"Ho Chi Minh"
 }
+
+
 #######################(28-1-2021)//limit
 
 GET http://localhost:4001/apartment/1?limit=2
