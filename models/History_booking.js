@@ -1,5 +1,6 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const sequelize = require("./sequelize");
+const User = require("./User");
 
 class History_booking extends Model {}
 
@@ -10,6 +11,8 @@ History_booking.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    id_own:DataTypes.NUMBER,
+    id_apartment:DataTypes.NUMBER,
     id_user: DataTypes.NUMBER,
     name_apartment: DataTypes.STRING,
     check_in: DataTypes.DATE,
@@ -27,5 +30,7 @@ History_booking.init(
     timestamps: false,
   }
 );
+
+
 
 module.exports = History_booking;

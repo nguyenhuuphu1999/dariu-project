@@ -113,9 +113,9 @@ POST  http://localhost:4001/apartments/checkBooking
 Content-Type: application/json
 
 {
-    "id_apartment":22,
-    "check_in": "2021-03-14",
-    "check_out": "2021-03-14"
+    "id_apartment":105,
+    "check_in": "2021-03-10",
+    "check_out": "2021-03-13"
 }
 #######################(bo)
 
@@ -123,10 +123,18 @@ POST  http://localhost:4001/apartments/booking
 Content-Type: application/json
 
 {
-    "check_in": "2021-03-14",
-    "check_out": "2021-03-14",
-    "id_apartment": 22,
-    "id_user_booking": 1
+  "id_user": 120,
+  "id_apartment":9,
+  "image": "https://a0.muscache.com/im/pictures/9423cbd5-9fda-420b-900e-ed2b8e45aada.jpg?im_w=720",
+  "name_apartment": "40m2 Spacious Apt of cultural neighborhood",
+  "so_ngay": 0,
+  "so_tien": 13,
+  "tong_tien": 13,
+  "check_in": "2021-03-23",
+  "check_out": "2021-03-23",
+  "email": "nhp2132@gmail.com",
+  "ho_ten": "Nguyễn Hữu Phú",
+  "ma_hoa_don": "1zycb2v8k3"
 }
 ####
 POST  http://localhost:4001/apartments/lich_su_dat_phong
@@ -274,7 +282,7 @@ Content-Type: application/json
     "apartment_name": "",
     "price": null,
     "ratings" :null,
-    "id_user_own":107,
+    "id_user_own":114,
     "image_url":"",
     "provincial":"Ho Chi Minh"
 }
@@ -386,7 +394,18 @@ Content-Type: application/json
 }
 
 #####
-GET    http://localhost:4001/apartments/lich_su_dat_hang/79
+GET    http://localhost:4001/apartments/lich_su_dat_hang/119/detail
 
-#####
-GET    http://localhost:4001/apartments/lich_su_dat_hang/35/detail
+#####http://localhost:4001/apartments/lich_su_dat_hang/119/detail
+GET    http://localhost:4001/apartments/lich_su_dat_hang/120
+###
+POST  http://localhost:4001/home/search
+Content-Type: application/json
+
+{
+    "name_city":"phu "
+}
+
+#####3
+
+GET  http://localhost:4001/apartments/city/1

@@ -197,7 +197,7 @@ router.get("/:id/detail", async (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "id_city", "apartment_name", "price", "ratings"],
+    
   });
 
   const apartmentDetail = await ApartmentDetail.findOne({
